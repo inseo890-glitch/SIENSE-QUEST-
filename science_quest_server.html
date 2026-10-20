@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07111f">
+<title>SCIENCE QUEST ∞ | 과학 탐험 연구소</title>
+<style>
+:root{--bg:#07111f;--panel:#101e32;--panel2:#142740;--text:#eff7ff;--muted:#9eb2cc;--line:#29415e;--cyan:#54f2df;--blue:#70a7ff;--pink:#ff75b8;--yellow:#ffd76b;--green:#76f7a7;--red:#ff7777;--shadow:0 18px 50px #0005}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 12% 0%,#17365b 0,transparent 35%),radial-gradient(ellipse at 90% 15%,#321b50 0,transparent 30%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;min-height:100vh}
+body.light{--bg:#edf4fc;--panel:#fff;--panel2:#f2f7ff;--text:#15253c;--muted:#526984;--line:#cfdaeb;--shadow:0 18px 50px #1c34501a;background:radial-gradient(ellipse at 12% 0%,#d3edff 0,transparent 35%),radial-gradient(ellipse at 90% 15%,#f3dcff 0,transparent 30%),var(--bg)}
+button,input,select{font:inherit}button{cursor:pointer;border:0;color:inherit}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}.wrap{width:min(1240px,94%);margin:auto}.topbar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 84%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 0}.brand{display:flex;align-items:center;gap:10px;font-weight:950;letter-spacing:.5px}.logo{width:42px;height:42px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(135deg,var(--cyan),var(--blue));color:#061322;font-size:24px;box-shadow:0 0 28px #54f2df33}.nav-actions{display:flex;gap:8px;flex-wrap:wrap}.btn{padding:10px 14px;border-radius:12px;background:var(--panel2);border:1px solid var(--line);font-weight:750;transition:.18s}.btn:hover{transform:translateY(-2px);filter:brightness(1.1)}.btn.primary{background:linear-gradient(120deg,var(--cyan),var(--blue));color:#061322;border:0}.btn.pink{background:linear-gradient(120deg,var(--pink),#bba0ff);color:#1d1230;border:0}.btn.small{padding:7px 10px;font-size:13px}.hero{padding:48px 0 24px;display:grid;grid-template-columns:1.35fr .65fr;gap:22px;align-items:center}.eyebrow{color:var(--cyan);font-weight:900;letter-spacing:2px;font-size:12px}.hero h1{font-size:clamp(36px,6vw,72px);line-height:1.02;margin:12px 0 16px;letter-spacing:-2px}.gradient{background:linear-gradient(90deg,var(--cyan),var(--blue),var(--pink));background-clip:text;color:transparent}.hero p{font-size:17px;line-height:1.7;color:var(--muted);max-width:720px}.hero-art{min-height:260px;border:1px solid var(--line);border-radius:30px;background:linear-gradient(145deg,#122c48cc,#25183bcc);display:grid;place-items:center;position:relative;overflow:hidden;box-shadow:var(--shadow)}.planet{font-size:clamp(90px,13vw,160px);filter:drop-shadow(0 0 30px #54f2df55);animation:float 5s ease-in-out infinite}.orbit{position:absolute;width:75%;height:38%;border:2px solid #54f2df88;border-radius:50%;transform:rotate(-24deg)}.orbit.o2{width:90%;height:52%;border-color:#ff75b877;transform:rotate(35deg)}.spark{position:absolute;font-size:22px;animation:twinkle 2s infinite alternate}@keyframes float{50%{transform:translateY(-12px) rotate(5deg)}}@keyframes twinkle{to{opacity:.35;transform:scale(.7)}}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:12px 0 30px}.stat,.panel,.card{background:var(--panel);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}.stat{padding:18px}.stat .num{font-size:28px;font-weight:950}.stat .label{font-size:12px;color:var(--muted);margin-top:4px}.layout{display:grid;grid-template-columns:270px 1fr;gap:20px;align-items:start}.sidebar{position:sticky;top:82px;padding:18px}.section-title{font-size:18px;font-weight:900;margin:0 0 14px}.side-group{display:grid;gap:8px;margin-bottom:22px}.side-btn{display:flex;align-items:center;gap:10px;text-align:left;padding:11px 12px;background:transparent;border:1px solid transparent;border-radius:12px;color:var(--muted)}.side-btn.active,.side-btn:hover{background:var(--panel2);border-color:var(--line);color:var(--text)}.side-btn .ico{font-size:19px;width:25px;text-align:center}.content{min-width:0}.tab{display:none}.tab.active{display:block}.panel{padding:22px;margin-bottom:18px}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px}.panel-head h2{margin:0;font-size:24px}.muted{color:var(--muted)}.pill{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;font-size:12px;color:var(--muted)}.form-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.field{display:grid;gap:7px}.field label{font-size:12px;color:var(--muted);font-weight:800}.field input,.field select,.search{width:100%;padding:12px 13px;border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:12px}.mode-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.mode-card{padding:17px;background:var(--panel2);border:1px solid var(--line);border-radius:16px;text-align:left;min-height:140px}.mode-card:hover,.mode-card.selected{border-color:var(--cyan);box-shadow:inset 0 0 0 1px var(--cyan)}.mode-card .big{font-size:30px}.mode-card strong{display:block;margin:7px 0}.mode-card span{font-size:12px;color:var(--muted);line-height:1.5}.quiz-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.progress{height:8px;background:var(--panel2);border-radius:999px;overflow:hidden;margin:15px 0}.progress>div{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--blue),var(--pink));transition:width .3s}.question-meta{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:15px}.question{font-size:clamp(21px,3vw,30px);font-weight:900;line-height:1.45;margin:12px 0 22px}.answers{display:grid;grid-template-columns:1fr 1fr;gap:12px}.answer{display:flex;align-items:center;gap:12px;text-align:left;padding:17px;background:var(--panel2);border:1px solid var(--line);border-radius:15px;min-height:72px;font-weight:700;line-height:1.45}.answer .letter{display:grid;place-items:center;flex:0 0 34px;height:34px;border-radius:10px;background:var(--panel);color:var(--cyan);font-weight:950}.answer:hover:not(:disabled){border-color:var(--cyan);transform:translateY(-1px)}.answer.correct{border-color:var(--green);background:#1b664022}.answer.wrong{border-color:var(--red);background:#8e303022}.answer:disabled{cursor:default}.feedback{display:none;padding:17px;border-radius:15px;margin-top:15px;line-height:1.7;background:var(--panel2);border:1px solid var(--line)}.feedback.show{display:block}.feedback.good{border-color:var(--green)}.feedback.bad{border-color:var(--red)}.quiz-controls{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:18px}.hidden{display:none!important}.result-score{font-size:clamp(42px,7vw,76px);font-weight:1000;line-height:1}.result-ring{width:155px;height:155px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--cyan) var(--deg,0deg),var(--panel2) 0);position:relative;margin:8px auto 18px}.result-ring:before{content:"";position:absolute;inset:12px;background:var(--panel);border-radius:50%}.result-ring span{position:relative;font-size:27px;font-weight:950}.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.result-box{background:var(--panel2);border:1px solid var(--line);border-radius:15px;padding:15px;text-align:center}.result-box strong{display:block;font-size:24px}.result-box small{color:var(--muted)}.topic-grid,.achievement-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.topic-card,.achievement{padding:16px;background:var(--panel2);border:1px solid var(--line);border-radius:16px}.topic-card .emoji,.achievement .emoji{font-size:28px}.topic-card h3,.achievement h3{margin:8px 0 5px}.topic-card p,.achievement p{font-size:12px;color:var(--muted);line-height:1.5}.topic-meter{height:6px;background:var(--panel);border-radius:99px;overflow:hidden;margin-top:10px}.topic-meter div{height:100%;background:linear-gradient(90deg,var(--cyan),var(--blue))}.locked{opacity:.48;filter:grayscale(.8)}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:480px}th,td{text-align:left;padding:13px 10px;border-bottom:1px solid var(--line)}th{font-size:12px;color:var(--muted)}td{font-size:14px}.rank{font-size:20px}.review-item{padding:15px;border:1px solid var(--line);background:var(--panel2);border-radius:14px;margin-bottom:10px}.review-item strong{display:block;margin-bottom:6px}.review-item .correct-text{color:var(--green)}.review-item .wrong-text{color:var(--red)}.glossary{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.term{padding:14px;background:var(--panel2);border:1px solid var(--line);border-radius:13px}.term strong{display:block;margin-bottom:5px}.term p{margin:0;color:var(--muted);font-size:13px;line-height:1.55}.footer{text-align:center;color:var(--muted);padding:35px 0 50px;font-size:12px}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);background:var(--text);color:var(--bg);padding:12px 18px;border-radius:999px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.25s;z-index:50}.toast.show{opacity:1;transform:translate(-50%,0)}.confetti{font-size:38px;letter-spacing:6px;text-align:center;margin:8px}.small-note{font-size:12px;color:var(--muted);line-height:1.6}.empty{padding:28px;text-align:center;color:var(--muted)}.timer{font-variant-numeric:tabular-nums;font-weight:900;color:var(--yellow)}.badge{display:inline-block;padding:4px 8px;border-radius:7px;background:#54f2df1b;color:var(--cyan);font-size:11px;font-weight:850}
+#authModal:not(.hidden){display:grid!important}#authModal.hidden{display:none!important}.user-card{display:flex;align-items:center;gap:14px}.avatar{width:56px;height:56px;display:grid;place-items:center;border-radius:18px;background:linear-gradient(135deg,var(--cyan),var(--pink));color:#07111f;font-size:28px;font-weight:900}.qr-code{width:min(320px,100%);height:auto;image-rendering:pixelated}@media(max-width:900px){.hero{grid-template-columns:1fr}.hero-art{min-height:190px}.layout{grid-template-columns:1fr}.sidebar{position:static}.side-group{grid-template-columns:repeat(3,1fr)}.side-btn{justify-content:center;font-size:12px}.side-btn .ico{width:auto}.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.nav{align-items:flex-start}.brand span:last-child{max-width:130px;font-size:13px}.hero{padding-top:28px}.hero h1{letter-spacing:-1px}.form-grid,.mode-grid,.topic-grid,.achievement-grid{grid-template-columns:1fr}.answers{grid-template-columns:1fr}.result-grid{grid-template-columns:1fr 1fr}.glossary{grid-template-columns:1fr}.panel{padding:16px}.side-group{grid-template-columns:repeat(2,1fr)}.nav-actions .btn{padding:8px 10px;font-size:12px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="wrap nav">
+  <div class="brand"><div class="logo">⚛</div><span>SCIENCE QUEST ∞</span></div>
+  <div class="nav-actions"><button class="btn small" id="themeBtn">☀️ 테마</button><button class="btn small" id="soundBtn">🔊 효과음 ON</button><button class="btn small" id="accountOpenBtn">👤 로그인</button><button class="btn small" id="helpBtn">❔ 도움말</button></div>
+</div></header>
+<main class="wrap">
+<section class="hero">
+ <div><div class="eyebrow">THE ULTIMATE SCIENCE ARCADE</div><h1>과학의 세계를<br><span class="gradient">탐험하라.</span></h1><p>물리·화학·생명·지구·우주를 넘나드는 초대형 과학 퀴즈 연구소! 실력을 시험하고, 업적을 모으고, 나만의 최고 기록을 만들어 봐.</p><div class="nav-actions"><button class="btn primary" onclick="showTab('play')">🚀 탐험 시작하기</button><button class="btn" onclick="showTab('topics')">🧭 분야 둘러보기</button></div></div>
+ <div class="hero-art"><div class="orbit"></div><div class="orbit o2"></div><div class="planet">🪐</div><span class="spark" style="top:18%;left:18%">✦</span><span class="spark" style="top:70%;right:18%;animation-delay:.7s">✧</span><span class="spark" style="bottom:15%;left:25%;animation-delay:1.2s">✦</span></div>
+</section>
+<section class="stats">
+ <div class="stat"><div class="num" id="statQuestions">73+</div><div class="label">준비된 과학 문제</div></div>
+ <div class="stat"><div class="num" id="statPlayed">0</div><div class="label">누적 퀴즈 플레이</div></div>
+ <div class="stat"><div class="num" id="statBest">0</div><div class="label">나의 최고 점수</div></div>
+ <div class="stat"><div class="num" id="statBadges">0 / 12</div><div class="label">획득한 업적</div></div>
+</section>
+<div class="layout">
+<aside class="sidebar panel">
+ <h2 class="section-title">🛰️ 탐험 메뉴</h2>
+ <div class="side-group">
+  <button class="side-btn active" data-tab="play"><span class="ico">🎮</span>퀴즈 플레이</button>
+  <button class="side-btn" data-tab="topics"><span class="ico">🧭</span>과학 분야</button>
+  <button class="side-btn" data-tab="records"><span class="ico">🏆</span>기록실</button>
+  <button class="side-btn" data-tab="achievements"><span class="ico">🎖️</span>업적 컬렉션</button>
+  <button class="side-btn" data-tab="review"><span class="ico">🧠</span>오답 노트</button>
+  <button class="side-btn" data-tab="glossary"><span class="ico">📚</span>과학 도감</button>
+  <button class="side-btn" data-tab="account"><span class="ico">🔐</span>계정 & QR</button>
+ </div>
+ <div class="panel" style="padding:14px;background:var(--panel2);box-shadow:none"><div class="eyebrow">YOUR MISSION</div><h3 style="margin:8px 0">오늘의 미션</h3><p class="small-note" id="dailyMission">퀴즈 1회에 도전해 보세요.</p><div class="progress"><div id="missionBar"></div></div><span class="pill" id="missionCount">0 / 1 완료</span></div>
+ <p class="small-note">💾 기록은 현재 기기의 브라우저에 저장돼요. 다른 기기와 자동 공유되지는 않습니다.</p>
+</aside>
+<section class="content">
+<div class="tab active" id="tab-play">
+ <div class="panel" id="setupPanel">
+  <div class="panel-head"><div><div class="eyebrow">MISSION CONTROL</div><h2>탐험 설정</h2></div><span class="pill">🧪 난이도와 분야를 선택하세요</span></div>
+  <div class="form-grid">
+   <div class="field"><label for="playerName">탐험가 이름</label><input id="playerName" maxlength="18" placeholder="예: 호기심 박사"></div>
+   <div class="field"><label for="difficulty">난이도</label><select id="difficulty"><option value="all">🎲 전체 섞기</option><option value="쉬움">🟢 쉬움</option><option value="보통">🟡 보통</option><option value="어려움">🔴 어려움</option><option value="adaptive">🧭 단계별 도전</option></select></div>
+   <div class="field"><label for="topicSelect">과학 분야</label><select id="topicSelect"><option value="all">🌌 모든 분야</option><option value="물리">⚙️ 물리</option><option value="화학">⚗️ 화학</option><option value="생명">🧬 생명과학</option><option value="지구">🌋 지구과학</option><option value="우주">🚀 우주</option><option value="환경">🌱 환경</option><option value="기술">🤖 과학기술</option></select></div>
+  </div>
+  <h3 style="margin:24px 0 12px">플레이 모드</h3>
+  <div class="mode-grid">
+   <button class="mode-card selected" data-mode="classic"><div class="big">🧠</div><strong>클래식 모드</strong><span>차근차근 풀고 해설을 읽으며 배우기</span></button>
+   <button class="mode-card" data-mode="sprint"><div class="big">⚡</div><strong>스피드 모드</strong><span>문제마다 제한 시간 15초! 빠르게 도전</span></button>
+   <button class="mode-card" data-mode="survival"><div class="big">❤️</div><strong>생존 모드</strong><span>기회 3번! 틀리면 하트가 줄어들어요</span></button>
+  </div>
+  <div class="form-grid" style="margin-top:16px">
+   <div class="field"><label for="questionCount">문제 수</label><select id="questionCount"><option value="10">10문제</option><option value="15" selected>15문제</option><option value="20">20문제</option><option value="30">30문제</option><option value="all">가능한 모든 문제</option></select></div>
+   <div class="field"><label for="pointValue">정답 점수</label><select id="pointValue"><option value="10">10점</option><option value="20" selected>20점</option><option value="50">50점</option></select></div>
+   <div class="field"><label for="shuffleToggle">문제 순서</label><select id="shuffleToggle"><option value="yes">🔀 무작위 섞기</option><option value="no">📋 원래 순서</option></select></div>
+  </div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px"><button class="btn primary" id="startBtn">🚀 퀴즈 출발!</button><button class="btn" id="serverQuizBtn">🌐 서버 문제로 도전</button><button class="btn" id="dailyBtn">🌟 오늘의 도전</button></div>
+  <p class="small-note">문제는 객관식 4지선다입니다. 정답을 고르면 해설이 표시되고, 퀴즈가 끝나면 결과와 오답을 확인할 수 있어요.</p>
+ </div>
+ <div class="panel hidden" id="quizPanel">
+  <div class="quiz-head"><div><span class="pill" id="quizModeLabel">🧠 클래식</span> <span class="pill" id="quizTopicLabel">🌌 전체</span></div><div class="timer" id="timerLabel">⏱️ 00:00</div></div>
+  <div class="progress"><div id="quizProgress"></div></div>
+  <div class="quiz-head"><span class="muted" id="questionCounter">문제 1 / 15</span><span class="pill" id="scoreLabel">점수 0</span><span class="pill" id="livesLabel">❤️❤️❤️</span></div>
+  <div class="question-meta" id="questionMeta"></div><div class="question" id="questionText">문제가 여기에 표시됩니다.</div>
+  <div class="answers" id="answers"></div>
+  <div class="feedback" id="feedback"></div>
+  <div class="quiz-controls"><button class="btn" id="hintBtn">💡 힌트 사용</button><button class="btn primary hidden" id="nextBtn">다음 문제 →</button><button class="btn pink hidden" id="finishBtn">결과 보기 🏁</button></div>
+ </div>
+ <div class="panel hidden" id="resultPanel">
+  <div class="eyebrow">MISSION REPORT</div><h2 id="resultTitle">탐험 완료!</h2><div class="confetti" id="resultEmoji">🎉 ✨ 🧪</div>
+  <div class="result-ring" id="resultRing"><span id="resultPercent">0%</span></div>
+  <div style="text-align:center"><div class="result-score" id="resultScore">0점</div><p class="muted" id="resultMessage"></p></div>
+  <div class="result-grid" style="margin:22px 0"><div class="result-box"><strong id="resultCorrect">0/0</strong><small>정답 수</small></div><div class="result-box"><strong id="resultTime">00:00</strong><small>걸린 시간</small></div><div class="result-box"><strong id="resultXP">+0 XP</strong><small>획득 경험치</small></div></div>
+  <h3>🧠 이번 탐험에서 배운 것</h3><div id="resultReview"></div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px"><button class="btn primary" id="againBtn">🔁 한 번 더</button><button class="btn" id="reviewWrongBtn">📒 오답 노트 보기</button><button class="btn" id="shareBtn">📤 결과 공유</button><button class="btn" id="printBtn">🖨️ 인쇄</button></div>
+ </div>
+</div>
+<div class="tab" id="tab-topics"><div class="panel"><div class="eyebrow">EXPLORE THE UNIVERSE</div><h2>과학 분야 지도</h2><p class="muted">관심 있는 분야를 골라 집중 훈련을 시작해 보세요.</p><div class="topic-grid" id="topicCards"></div></div></div>
+<div class="tab" id="tab-records"><div class="panel"><div class="panel-head"><div><div class="eyebrow">HALL OF FAME</div><h2>나의 기록실</h2></div><button class="btn small" id="clearRecordsBtn">기록 초기화</button></div><div class="result-grid" style="margin-bottom:20px"><div class="result-box"><strong id="recordRuns">0</strong><small>플레이 횟수</small></div><div class="result-box"><strong id="recordBest">0</strong><small>최고 점수</small></div><div class="result-box"><strong id="recordAccuracy">0%</strong><small>누적 정답률</small></div></div><h3>🏆 최고 기록 TOP 10</h3><div class="table-wrap" id="leaderboard"></div><h3 style="margin-top:26px">📈 최근 탐험 기록</h3><div class="table-wrap" id="historyTable"></div></div></div>
+<div class="tab" id="tab-achievements"><div class="panel"><div class="eyebrow">COLLECT THEM ALL</div><h2>업적 컬렉션</h2><p class="muted">새로운 기록을 세우고 특별한 배지를 수집하세요.</p><div class="achievement-grid" id="achievementCards"></div></div></div>
+<div class="tab" id="tab-review"><div class="panel"><div class="panel-head"><div><div class="eyebrow">LEARN FROM MISTAKES</div><h2>오답 노트</h2></div><button class="btn small" id="clearWrongBtn">오답 노트 비우기</button></div><p class="muted">틀린 문제는 자동 저장됩니다. 해설을 읽고 다시 도전해 보세요.</p><div id="wrongList"></div></div></div>
+<div class="tab" id="tab-glossary"><div class="panel"><div class="eyebrow">MINI SCIENCE ENCYCLOPEDIA</div><h2>과학 도감</h2><p class="muted">퀴즈에 자주 나오는 개념을 간단히 정리했어요.</p><input class="search" id="glossarySearch" placeholder="🔎 개념 검색 (예: 원자, 중력, 광합성)"><div class="glossary" id="glossaryList" style="margin-top:15px"></div></div></div>
+<div class="tab" id="tab-account">
+ <div class="panel"><div class="eyebrow">ACCOUNT CENTER</div><h2>🔐 로그인 & 탐험가 프로필</h2><p class="muted">이 버전은 현재 브라우저에 계정을 저장하는 데모 로그인입니다. 다른 기기와 계정을 공유하는 온라인 인증은 서버 연결이 필요합니다.</p>
+  <div id="accountStatus" class="panel" style="background:var(--panel2);box-shadow:none;margin-top:15px"><h3>로그아웃 상태</h3><p class="small-note">계정을 만들거나 로그인하면 이 기기에서 탐험가 이름과 개인 기록을 관리할 수 있어요.</p><button class="btn primary" onclick="openAuth('register')">✨ 계정 만들기</button> <button class="btn" onclick="openAuth('login')">로그인</button></div>
+  <h3>📱 웹사이트 QR 코드 만들기</h3><p class="muted">사이트를 인터넷에 공개한 뒤, 공개 주소를 아래에 붙여 넣고 QR 코드를 만들면 다른 사람이 휴대폰 카메라로 접속할 수 있어요.</p>
+  <div class="field"><label for="qrUrl">공개 웹사이트 주소 (https://로 시작)</label><input id="qrUrl" placeholder="예: https://내-과학퀴즈-사이트.example"></div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><button class="btn primary" id="makeQrBtn">▦ QR 코드 생성</button><button class="btn" id="downloadQrBtn" disabled>⬇️ QR 이미지 저장</button><button class="btn" id="copyQrUrlBtn">주소 복사</button></div>
+  <div id="qrArea" class="panel hidden" style="text-align:center;background:#fff;color:#17243a;margin-top:18px;box-shadow:none"><div id="qrImageWrap" style="min-height:220px;display:grid;place-items:center"></div><h3 style="color:#17243a">SCIENCE QUEST ∞</h3><p style="color:#526984;font-size:13px">휴대폰 카메라로 스캔해 접속하세요.</p><p id="qrCaption" style="color:#526984;word-break:break-all;font-size:12px"></p></div>
+  <div class="small-note" style="margin-top:14px">⚠️ 지금 HTML 파일만 가지고는 다른 사람이 QR로 사이트에 접속할 수 없어요. 먼저 GitHub Pages, Netlify 등으로 무료 공개 호스팅을 해야 합니다. 로그인은 현재 기기에만 저장되며 보안이 필요한 실제 계정 서비스가 아닙니다.</div>
+ </div>
+</div>
+</section>
+</div>
+</main>
+<footer class="wrap footer">SCIENCE QUEST ∞ · 호기심은 가장 멋진 실험 도구입니다. 🔬<br>학교 과학 부스용 학습 프로젝트 · 모든 기록은 이 브라우저에 저장됩니다.</footer>
+
+<div id="authModal" class="hidden" style="position:fixed;inset:0;background:#020817cc;backdrop-filter:blur(8px);z-index:100;display:grid;place-items:center;padding:18px">
+ <div class="panel" style="width:min(460px,100%);max-height:90vh;overflow:auto;position:relative">
+  <button class="btn small" id="authCloseBtn" style="position:absolute;right:16px;top:16px">✕ 닫기</button>
+  <div class="eyebrow">EXPLORER ID</div><h2 id="authTitle">계정 만들기</h2><p class="small-note">데모 계정은 이 브라우저에만 저장됩니다.</p>
+  <form id="authForm" style="display:grid;gap:13px;margin-top:18px">
+   <div class="field"><label for="authUsername">아이디 (3~18자)</label><input id="authUsername" minlength="3" maxlength="18" required autocomplete="username" placeholder="영문·숫자·밑줄"></div>
+   <div class="field"><label for="authPassword">비밀번호 (8자 이상)</label><input id="authPassword" type="password" minlength="8" required autocomplete="new-password" placeholder="8자 이상"></div>
+   <div class="field hidden" id="authConfirmWrap"><label for="authConfirm">비밀번호 확인</label><input id="authConfirm" type="password" minlength="8" autocomplete="new-password"></div>
+   <button class="btn primary" id="authSubmitBtn" type="submit">계정 만들기</button>
+  </form>
+  <p id="authError" style="color:var(--red);font-size:13px"></p>
+  <button class="btn" id="authSwitchBtn" style="width:100%">이미 계정이 있어요 · 로그인</button>
+ </div>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const Q = [
+{t:"물리",d:"쉬움",q:"소리가 전달되기 위해 반드시 필요한 것은?",a:["진공","물질로 된 매질","빛","자기장"],c:1,e:"소리는 공기·물·고체 같은 매질의 진동으로 전달됩니다. 진공에서는 소리가 전달되지 않아요.",h:"우주 공간에서 폭발음이 들릴까요?"},
+{t:"물리",d:"쉬움",q:"힘의 국제단위(SI)는 무엇일까요?",a:["줄(J)","와트(W)","뉴턴(N)","파스칼(Pa)"],c:2,e:"힘의 단위는 뉴턴(N)입니다. 에너지는 줄, 일률은 와트, 압력은 파스칼을 사용해요.",h:"아이작 뉴턴의 이름에서 왔어요."},
+{t:"물리",d:"쉬움",q:"빛이 공기에서 물로 들어갈 때 일반적으로 진행 방향이 꺾이는 현상은?",a:["반사","굴절","회절","증발"],c:1,e:"빛이 서로 다른 매질의 경계에서 속도가 변하며 방향이 바뀌는 현상을 굴절이라고 합니다.",h:"물속의 빨대가 꺾여 보이는 이유예요."},
+{t:"물리",d:"보통",q:"전압이 일정할 때 저항이 커지면 전류는 어떻게 될까요?",a:["커진다","작아진다","항상 같다","무한대가 된다"],c:1,e:"옴의 법칙 I=V/R에 따라 전압이 같을 때 저항이 커지면 전류는 작아집니다.",h:"I=V/R 식을 떠올려 보세요."},
+{t:"물리",d:"보통",q:"운동 에너지를 크게 만드는 요인으로 옳은 것은?",a:["질량과 속력","색깔과 온도","부피만","전하만"],c:0,e:"운동 에너지는 E=½mv²입니다. 질량이 클수록, 속력이 빠를수록 커지며 속력의 영향은 제곱으로 나타나요.",h:"자동차가 두 배 빠르면 운동 에너지는 네 배예요."},
+{t:"물리",d:"어려움",q:"마찰이 없는 곳에서 물체에 알짜힘이 0이라면 물체는 어떻게 될까요?",a:["반드시 멈춘다","반드시 빨라진다","정지 또는 등속 직선 운동을 유지한다","방향을 계속 바꾼다"],c:2,e:"뉴턴의 제1법칙입니다. 알짜힘이 0이면 속도가 변하지 않으므로 정지하거나 등속 직선 운동을 합니다.",h:"관성 법칙이라고도 불러요."},
+{t:"물리",d:"보통",q:"열이 진공을 통해 태양에서 지구로 전달되는 주된 방식은?",a:["전도","대류","복사","마찰"],c:2,e:"복사는 전자기파로 에너지를 전달하므로 매질이 없어도 가능합니다.",h:"태양빛이 우주 공간을 지나와요."},
+{t:"물리",d:"쉬움",q:"볼록렌즈가 평행한 빛을 모으는 지점은?",a:["초점","진원","마디","극점"],c:0,e:"볼록렌즈는 평행 광선을 굴절시켜 초점에 모읍니다. 오목렌즈는 빛을 퍼뜨려요.",h:"돋보기로 햇빛을 모을 때 생기는 지점이에요."},
+{t:"물리",d:"보통",q:"주파수의 단위는?",a:["미터","헤르츠","쿨롱","켈빈"],c:1,e:"주파수는 1초 동안 반복되는 진동 횟수이며 단위는 헤르츠(Hz)입니다.",h:"Hz라고 씁니다."},
+{t:"물리",d:"어려움",q:"전기 에너지를 빛과 열로 바꾸는 전구에서 에너지 보존 법칙에 맞는 설명은?",a:["에너지가 새로 생긴다","에너지가 사라진다","전기 에너지가 다른 형태로 전환된다","질량이 모두 빛이 된다"],c:2,e:"에너지는 생성·소멸하지 않고 형태가 바뀝니다. 전구에서는 전기 에너지가 빛과 열로 전환돼요.",h:"에너지의 총량은 보존됩니다."},
+{t:"화학",d:"쉬움",q:"물의 화학식은?",a:["CO₂","H₂O","O₂","NaCl"],c:1,e:"물 분자 하나는 수소 원자 2개와 산소 원자 1개로 이루어져 H₂O로 나타냅니다.",h:"수소 두 개, 산소 한 개예요."},
+{t:"화학",d:"쉬움",q:"산성 용액의 pH는 일반적으로 얼마보다 작을까요?",a:["0","7","10","14"],c:1,e:"25℃에서 pH 7은 중성, 7보다 작으면 산성, 7보다 크면 염기성입니다.",h:"중성의 기준 숫자를 떠올려 보세요."},
+{t:"화학",d:"쉬움",q:"철이 녹스는 현상에 가장 직접적으로 필요한 것은?",a:["산소와 물","헬륨과 설탕","질소만","순수한 금"],c:0,e:"철의 부식에는 보통 산소와 물이 관여합니다. 염분은 부식을 더 빠르게 할 수 있어요.",h:"비에 젖은 철이 오래 방치되면 생겨요."},
+{t:"화학",d:"보통",q:"원자핵을 구성하는 입자는?",a:["전자와 광자","양성자와 중성자","전자와 중성자","분자와 이온"],c:1,e:"원자핵은 양성자와 중성자로 구성되며, 전자는 원자핵 주변에 존재합니다. 수소-1처럼 중성자가 없는 동위원소도 있어요.",h:"전자는 원자핵 바깥에 있어요."},
+{t:"화학",d:"보통",q:"화학 반응 전후에 보존되는 것으로 옳은 것은(닫힌계 기준)?",a:["원자의 종류별 개수와 전체 질량","분자의 모양","물질의 색","온도만"],c:0,e:"화학 반응에서 원자는 재배열되지만 원자 자체가 없어지거나 새로 생기지 않으므로 질량이 보존됩니다.",h:"반응물의 원자들이 생성물로 다시 조합돼요."},
+{t:"화학",d:"어려움",q:"동위원소의 공통점과 차이점을 바르게 설명한 것은?",a:["양성자 수가 다르다","전자 수만 다르다","양성자 수는 같고 중성자 수가 다르다","원소 종류가 항상 다르다"],c:2,e:"동위원소는 같은 원소이므로 양성자 수가 같고, 중성자 수가 달라 질량수가 다릅니다.",h:"같은 원소의 서로 다른 질량 버전이에요."},
+{t:"화학",d:"쉬움",q:"식염의 주성분인 염화 나트륨의 화학식은?",a:["NaCl","HCl","KOH","CaCO₃"],c:0,e:"염화 나트륨은 나트륨 이온과 염화 이온으로 이루어져 있으며 화학식은 NaCl입니다.",h:"나트륨은 Na, 염소는 Cl이에요."},
+{t:"화학",d:"보통",q:"기체의 온도를 높이고 부피를 일정하게 유지하면 일반적으로 압력은?",a:["낮아진다","높아진다","0이 된다","항상 같다"],c:1,e:"부피가 일정할 때 온도가 높아지면 기체 입자의 평균 운동 에너지가 커져 벽과 더 강하게 충돌하므로 압력이 증가합니다.",h:"입자들이 더 빠르게 움직여요."},
+{t:"화학",d:"어려움",q:"산화·환원 반응에서 산화에 대한 현대적 정의는?",a:["전자 얻기","전자 잃기","양성자만 얻기","중성자 잃기"],c:1,e:"전자 관점에서 산화는 전자를 잃는 과정, 환원은 전자를 얻는 과정입니다. 두 과정은 함께 일어나요.",h:"OIL RIG: Oxidation Is Loss."},
+{t:"화학",d:"보통",q:"촉매의 역할로 가장 알맞은 것은?",a:["반응 후 반드시 소모된다","활성화 에너지를 낮춰 반응 속도를 바꾼다","반응물의 원자를 없앤다","모든 반응을 멈춘다"],c:1,e:"촉매는 다른 반응 경로를 제공해 활성화 에너지를 낮추며, 반응이 끝나도 전체적으로 소모되지 않습니다.",h:"반응의 지름길을 제공한다고 생각해 보세요."},
+{t:"생명",d:"쉬움",q:"식물이 빛을 이용해 양분을 만드는 과정은?",a:["호흡","광합성","발효","소화"],c:1,e:"광합성은 빛 에너지를 이용해 이산화 탄소와 물로부터 당을 만들고 산소를 방출하는 과정입니다.",h:"잎의 엽록체에서 일어나요."},
+{t:"생명",d:"쉬움",q:"유전 정보를 주로 저장하는 분자는?",a:["DNA","전분","지방산","물"],c:0,e:"DNA는 유전 정보를 저장하는 핵산입니다. 일부 바이러스는 RNA를 유전 물질로 사용합니다.",h:"이중 나선 구조로 유명해요."},
+{t:"생명",d:"보통",q:"세포에서 에너지를 ATP 형태로 만드는 데 중요한 역할을 하는 세포 소기관은?",a:["리보솜","미토콘드리아","골지체만","세포벽"],c:1,e:"미토콘드리아는 세포 호흡을 통해 ATP 생산에 중요한 역할을 합니다.",h:"세포의 발전소라고 불리기도 해요."},
+{t:"생명",d:"쉬움",q:"사람의 혈액에서 산소 운반에 중요한 단백질은?",a:["인슐린","헤모글로빈","케라틴","아밀레이스"],c:1,e:"적혈구 속 헤모글로빈은 산소와 결합해 조직으로 운반하는 역할을 합니다.",h:"적혈구에 들어 있어요."},
+{t:"생명",d:"보통",q:"생태계에서 생산자에 해당하는 생물은?",a:["풀과 조류","사자만","곰팡이만","모든 소비자"],c:0,e:"생산자는 광합성 등으로 무기물에서 유기물을 만들어 생태계에 에너지를 공급합니다. 식물과 조류가 대표적이에요.",h:"먹이사슬의 출발점이 되는 경우가 많아요."},
+{t:"생명",d:"어려움",q:"감수분열의 중요한 결과는?",a:["염색체 수가 두 배가 된다","유전적으로 다양한 반수체 세포가 만들어진다","모든 세포가 똑같아진다","DNA가 전혀 복제되지 않는다"],c:1,e:"감수분열은 염색체 수를 절반으로 줄여 생식세포 형성에 기여하며, 교차와 독립 분리로 유전적 다양성을 만듭니다.",h:"생식세포를 만들 때 중요한 분열이에요."},
+{t:"생명",d:"보통",q:"항체를 만들어 면역 반응에 기여하는 세포는?",a:["B 림프구 계열의 형질세포","적혈구","혈소판","신경세포"],c:0,e:"B 림프구가 분화한 형질세포는 특정 항원에 결합하는 항체를 분비합니다.",h:"항체를 분비하는 면역 세포예요."},
+{t:"생명",d:"쉬움",q:"효소의 일반적인 기능은?",a:["활성화 에너지를 낮춰 반응을 돕는다","항상 반응을 불가능하게 한다","DNA를 전부 없앤다","모든 물질을 물로 바꾼다"],c:0,e:"효소는 생체 촉매로서 반응 속도를 높이며, 특정 조건에서 잘 작용합니다.",h:"몸속 화학 반응의 도우미예요."},
+{t:"생명",d:"보통",q:"먹이사슬에서 에너지가 다음 영양 단계로 전달될 때 일반적으로 일어나는 일은?",a:["에너지가 100% 전달된다","일부 에너지가 열 등으로 빠져나간다","에너지가 무한히 늘어난다","물질과 에너지가 모두 사라진다"],c:1,e:"생물은 호흡과 활동에 에너지를 사용하며 많은 에너지가 열로 방출됩니다. 그래서 상위 영양 단계로 전달되는 에너지는 줄어듭니다.",h:"먹이사슬의 위로 갈수록 이용 가능한 에너지가 줄어요."},
+{t:"지구",d:"쉬움",q:"지구 대기에서 가장 많은 비율을 차지하는 기체는?",a:["산소","질소","이산화 탄소","수소"],c:1,e:"건조한 공기 기준으로 질소가 약 78%, 산소가 약 21%를 차지합니다.",h:"공기의 약 5분의 4예요."},
+{t:"지구",d:"쉬움",q:"지진파 중 고체와 액체를 모두 통과할 수 있는 것은?",a:["P파","S파","표면파만","음파만"],c:0,e:"P파는 압축·팽창 형태의 종파로 고체와 액체를 통과할 수 있지만, S파는 액체를 통과하지 못합니다.",h:"Primary wave라고도 해요."},
+{t:"지구",d:"보통",q:"계절 변화의 가장 중요한 원인은?",a:["지구와 태양 사이 거리 변화만","지구 자전축의 기울기와 공전","달의 색 변화","태양이 매일 꺼졌다 켜짐"],c:1,e:"지구 자전축이 약 23.5도 기울어진 상태로 공전해 계절마다 태양 고도와 낮의 길이가 달라집니다.",h:"남반구와 북반구의 계절은 반대예요."},
+{t:"지구",d:"보통",q:"암석이 풍화되고 침식되어 퇴적물이 쌓여 만들어질 수 있는 암석은?",a:["퇴적암","화성암만","핵융합암","금속 합금"],c:0,e:"퇴적물이 쌓이고 압축·교결되면 퇴적암이 만들어질 수 있습니다.",h:"층리와 화석이 발견되기도 해요."},
+{t:"지구",d:"어려움",q:"판 구조론에서 해양판이 대륙판 아래로 들어가는 과정은?",a:["발산","섭입","승화","응결"],c:1,e:"밀도가 큰 해양판이 다른 판 아래로 내려가는 과정을 섭입이라고 하며 해구와 화산호 형성과 관련됩니다.",h:"판이 다른 판 아래로 들어가요."},
+{t:"지구",d:"쉬움",q:"물의 순환에서 액체 물이 수증기로 변하는 과정은?",a:["응결","증발","침전","융해"],c:1,e:"증발은 액체 표면에서 물 분자가 기체로 변하는 과정입니다. 응결은 수증기가 액체로 변하는 과정이에요.",h:"햇볕에 젖은 바닥이 마르는 현상이에요."},
+{t:"지구",d:"보통",q:"온실 효과를 일으키는 기체로 잘 알려진 것은?",a:["이산화 탄소","아르곤만","네온만","헬륨만"],c:0,e:"이산화 탄소, 메테인, 수증기 등은 지구에서 방출되는 적외선을 흡수·재방출해 온실 효과에 기여합니다.",h:"탄소 배출과 기후 변화 이야기에서 자주 나와요."},
+{t:"지구",d:"어려움",q:"지구 내부에서 액체 상태로 존재하는 주요 층은?",a:["내핵","외핵","지각","상부 맨틀 전체"],c:1,e:"지구 외핵은 주로 액체 철·니켈로 이루어진 것으로 알려져 있습니다. 내핵은 압력이 매우 커 고체 상태입니다.",h:"지구 자기장 형성과도 관련이 있어요."},
+{t:"우주",d:"쉬움",q:"태양계에서 태양에 가장 가까운 행성은?",a:["금성","지구","수성","화성"],c:2,e:"태양에서 가까운 순서는 수성, 금성, 지구, 화성, 목성, 토성, 천왕성, 해왕성입니다.",h:"이름이 물과 비슷하지만 가장 뜨거운 행성은 아니에요."},
+{t:"우주",d:"쉬움",q:"달이 스스로 빛나는 것처럼 보이는 주된 이유는?",a:["달이 태양빛을 반사하기 때문","달이 거대한 전구라서","지구에서 레이저를 쏴서","달 내부의 불꽃 때문"],c:0,e:"달은 태양빛을 반사해 밝게 보입니다. 달 자체가 태양처럼 빛을 만들어 내는 것은 아니에요.",h:"거울처럼 빛을 반사해요."},
+{t:"우주",d:"보통",q:"별의 색과 표면 온도의 관계로 옳은 것은?",a:["푸른 별이 대체로 더 뜨겁다","붉은 별이 항상 더 뜨겁다","색은 온도와 무관하다","모든 별의 온도는 같다"],c:0,e:"별의 색은 표면 온도와 관련이 있으며 푸른 별은 붉은 별보다 표면 온도가 높은 편입니다.",h:"불꽃의 푸른 부분과 붉은 부분을 생각해 보세요."},
+{t:"우주",d:"보통",q:"태양이 에너지를 방출하는 주된 원리는?",a:["화학적 연소","핵융합","석탄 연소","마찰"],c:1,e:"태양 중심부에서는 수소 원자핵이 헬륨으로 융합하는 과정에서 에너지가 방출됩니다.",h:"원자핵이 결합하는 반응이에요."},
+{t:"우주",d:"어려움",q:"우주가 팽창한다는 관측 근거로 널리 알려진 현상은?",a:["먼 은하의 적색편이","달의 위상 변화","지구의 조석","계절풍"],c:0,e:"먼 은하에서 오는 빛의 스펙트럼이 긴 파장 쪽으로 이동하는 적색편이는 우주 팽창의 중요한 관측 근거입니다.",h:"빛의 파장이 길어지는 현상과 관련 있어요."},
+{t:"우주",d:"쉬움",q:"태양계에서 고리가 특히 뚜렷한 행성으로 유명한 것은?",a:["토성","수성","지구","화성"],c:0,e:"토성의 고리는 얼음과 암석 조각 등으로 이루어져 있어 매우 뚜렷하게 관측됩니다. 다른 거대 행성에도 고리가 있어요.",h:"고리 모양 그림으로 자주 그려져요."},
+{t:"우주",d:"보통",q:"블랙홀의 사건의 지평선은 무엇을 뜻할까요?",a:["빛도 빠져나올 수 없는 경계","행성의 대기층","별이 태어나는 구름","달의 표면"],c:0,e:"사건의 지평선 안쪽에서는 빛조차 바깥으로 탈출할 수 없습니다. 이는 블랙홀의 중요한 경계입니다.",h:"그 경계 안쪽에서는 탈출이 불가능해요."},
+{t:"환경",d:"쉬움",q:"생물 다양성을 보전하는 데 도움이 되는 행동은?",a:["서식지 파괴","야생 생물 불법 포획","서식지 보호와 복원","외래종 무분별한 방생"],c:2,e:"서식지 보호와 복원, 지속 가능한 자원 이용은 생물 다양성 보전에 도움이 됩니다.",h:"생물이 살아갈 집을 지켜 주세요."},
+{t:"환경",d:"보통",q:"재활용만큼 중요한 자원 절약 방법은?",a:["필요 없는 물건을 더 사기","사용량 줄이기와 재사용","일회용품 늘리기","모든 쓰레기를 섞어 버리기"],c:1,e:"자원 사용 자체를 줄이고 물건을 다시 쓰는 것은 생산·폐기 과정의 자원과 에너지 사용을 줄일 수 있습니다.",h:"3R 중 Reduce와 Reuse를 생각해 보세요."},
+{t:"환경",d:"보통",q:"부영양화가 호수에서 심해질 때 자주 나타나는 현상은?",a:["영양염 증가에 따른 조류 대발생","물이 영원히 얼어붙음","산소가 무한히 증가","염분이 전부 사라짐"],c:0,e:"질소·인 같은 영양염이 과도하게 유입되면 조류가 급증하고, 분해 과정에서 산소가 줄어 수생 생물에 피해를 줄 수 있습니다.",h:"녹조와 관련 있는 현상이에요."},
+{t:"환경",d:"어려움",q:"탄소 발자국이란 무엇일까요?",a:["발자국의 크기","활동이나 제품과 관련된 온실가스 배출량을 이산화 탄소 환산량으로 나타낸 것","토양의 탄소만","나무의 높이"],c:1,e:"탄소 발자국은 활동·제품·조직 등이 직간접적으로 유발하는 온실가스 배출량을 CO₂ 환산량으로 나타낸 지표입니다.",h:"배출량을 하나의 수치로 나타내요."},
+{t:"기술",d:"쉬움",q:"인공지능(AI)에 대한 설명으로 가장 알맞은 것은?",a:["데이터에서 패턴을 학습해 작업을 수행하는 기술을 포함한다","항상 인간보다 정확하다","전기를 쓰지 않는다","오류가 절대 없다"],c:0,e:"AI는 데이터와 알고리즘을 이용해 예측·분류·생성 등 다양한 작업을 수행합니다. 결과가 항상 정확한 것은 아니에요.",h:"학습한 패턴을 활용해 답을 만들 수 있어요."},
+{t:"기술",d:"보통",q:"태양광 패널이 주로 바꾸는 에너지 형태는?",a:["빛 에너지에서 전기 에너지","소리에서 질량","화학 에너지에서 중력","열에서 핵에너지"],c:0,e:"태양전지는 빛을 흡수해 전하의 흐름을 만들고 전기 에너지로 변환합니다.",h:"햇빛으로 전기를 만들어요."},
+{t:"기술",d:"보통",q:"센서의 기본 역할은?",a:["주변의 물리량을 감지해 신호로 바꾼다","항상 전기를 생산한다","모든 데이터를 자동으로 이해한다","중력을 없앤다"],c:0,e:"센서는 온도·빛·압력·거리 같은 물리량을 감지해 전기 신호 등으로 변환합니다.",h:"자동문이 사람을 감지하는 데 쓰여요."},
+{t:"기술",d:"어려움",q:"실험에서 대조군을 두는 가장 중요한 이유는?",a:["결과를 더 화려하게 만들기","실험 처치의 효과를 비교·판단하기","변인을 모두 없애기","표본 수를 항상 1로 만들기"],c:1,e:"대조군은 실험 처치가 없는 비교 기준을 제공해 독립 변인의 효과를 더 타당하게 판단하도록 돕습니다.",h:"비교 기준이 있어야 차이를 해석할 수 있어요."},
+{t:"물리",d:"쉬움",q:"속력을 구하는 식으로 옳은 것은?",a:["시간 ÷ 거리","거리 ÷ 시간","질량 × 온도","힘 ÷ 색깔"],c:1,e:"평균 속력은 이동한 거리를 걸린 시간으로 나눈 값입니다.",h:"1초에 몇 미터 가는지 생각해 보세요."},
+{t:"화학",d:"쉬움",q:"얼음이 액체 물로 변하는 상태 변화는?",a:["응고","융해","승화","기화"],c:1,e:"고체가 액체로 변하는 상태 변화를 융해라고 합니다. 액체가 고체로 변하면 응고예요.",h:"녹는다고 표현해요."},
+{t:"생명",d:"보통",q:"사람의 소장에서 소화된 영양소가 주로 흡수되는 구조는?",a:["융털","폐포","네프론","시냅스"],c:0,e:"소장 안쪽의 융털과 미세융털은 표면적을 넓혀 영양소 흡수를 효율적으로 만듭니다.",h:"작은 돌기들이 표면적을 넓혀요."},
+{t:"지구",d:"보통",q:"달의 인력과 태양의 인력이 바닷물 높이에 영향을 주는 현상은?",a:["조석","풍화","화산","오로라"],c:0,e:"달의 인력이 주된 역할을 하고 태양의 인력도 함께 작용해 밀물과 썰물 같은 조석이 나타납니다.",h:"밀물과 썰물의 원인이에요."},
+{t:"우주",d:"쉬움",q:"지구가 한 바퀴 자전하는 데 걸리는 시간은 대략?",a:["하루","한 달","한 해","백 년"],c:0,e:"지구는 약 하루에 한 바퀴 자전합니다. 별을 기준으로 한 자전 주기는 약 23시간 56분이에요.",h:"낮과 밤이 반복되는 주기예요."},
+{t:"환경",d:"쉬움",q:"생분해성이라는 말의 뜻에 가장 가까운 것은?",a:["미생물 등의 작용으로 분해될 수 있음","절대 분해되지 않음","금속으로만 만들어짐","물에 닿으면 무조건 폭발함"],c:0,e:"생분해성 물질은 적절한 환경에서 미생물 등의 작용으로 분해될 수 있습니다. 실제 분해 속도는 조건에 따라 달라요.",h:"생물의 작용으로 분해될 수 있다는 뜻이에요."},
+{t:"기술",d:"쉬움",q:"현미경을 사용하는 주된 목적은?",a:["작은 물체를 확대해 관찰하기","물체의 질량을 직접 재기","중력을 측정하지 않고 없애기","소리를 전기로 바꾸기"],c:0,e:"현미경은 맨눈으로 보기 어려운 작은 구조를 확대해 관찰하는 도구입니다.",h:"세포 관찰에 자주 쓰여요."},
+{t:"물리",d:"보통",q:"압력은 무엇을 면적으로 나눈 값일까요?",a:["힘","속력","온도","전하량"],c:0,e:"압력은 단위 면적당 수직으로 작용하는 힘입니다. P=F/A로 나타낼 수 있어요.",h:"같은 힘이라도 닿는 면적이 작으면 커져요."},
+{t:"화학",d:"보통",q:"주기율표에서 같은 족 원소들이 비슷한 화학적 성질을 보이는 주된 이유는?",a:["최외각 전자 배치가 비슷해서","모두 질량이 같아서","모두 같은 색이라서","중성자 수가 항상 같아서"],c:0,e:"특히 주족 원소는 최외각 전자 배치가 비슷해 화학적 성질이 비슷한 경향을 보입니다.",h:"반응에 관여하는 바깥쪽 전자와 관련 있어요."},
+{t:"생명",d:"쉬움",q:"식물의 잎에서 기체 교환이 주로 일어나는 작은 구멍은?",a:["기공","모세혈관","신경절","관절"],c:0,e:"기공은 잎 표면에 있는 구멍으로 이산화 탄소와 산소, 수증기의 이동에 관여합니다.",h:"기공의 열림과 닫힘은 물 손실에도 영향을 줘요."},
+{t:"지구",d:"쉬움",q:"구름이 만들어지는 데 중요한 과정은?",a:["수증기의 응결","암석의 용융만","금속의 산화만","핵융합"],c:0,e:"공기가 냉각되어 수증기가 작은 물방울이나 얼음 결정으로 응결하면 구름이 형성됩니다.",h:"수증기가 작은 물방울로 바뀌어요."},
+{t:"우주",d:"보통",q:"광년은 무엇을 나타내는 단위일까요?",a:["시간","거리","질량","온도"],c:1,e:"광년은 빛이 1년 동안 진공에서 이동하는 거리로, 천문학에서 매우 큰 거리를 나타냅니다.",h:"빛이 1년 동안 간 거리예요."},
+{t:"환경",d:"보통",q:"먹이그물에 대한 설명으로 옳은 것은?",a:["여러 먹이사슬이 서로 연결된 관계","한 생물만 존재하는 곳","기상 관측 장비","암석의 층서"],c:0,e:"먹이그물은 생태계 안에서 여러 먹이사슬이 복잡하게 연결된 관계를 나타냅니다.",h:"생물의 먹고 먹히는 관계가 그물처럼 얽혀 있어요."},
+{t:"기술",d:"보통",q:"과학 실험에서 독립 변인은 무엇일까요?",a:["연구자가 의도적으로 바꾸는 변인","항상 측정 결과만 뜻함","실험과 무관한 모든 것","기록하지 않는 값"],c:0,e:"독립 변인은 연구자가 변화시키는 요인이고, 종속 변인은 그 변화에 따라 측정하는 결과입니다.",h:"연구자가 바꾸는 쪽이에요."},
+{t:"물리",d:"어려움",q:"파동의 속력, 진동수, 파장의 관계로 옳은 것은?",a:["v=fλ","v=f/λ","v=λ-f","v=f+λ"],c:0,e:"파동의 속력 v는 진동수 f와 파장 λ의 곱으로 나타냅니다.",h:"속력은 진동수와 파장을 곱해요."},
+{t:"화학",d:"어려움",q:"몰(mol)은 무엇을 세기 위한 물질량 단위일까요?",a:["입자의 양","온도 차이","부피만","압력만"],c:0,e:"몰은 원자·분자·이온 등 미시적 입자의 양을 나타내는 SI 단위입니다. 1몰에는 정확히 6.02214076×10²³개의 지정된 입자가 들어 있어요.",h:"아보가드로 상수와 관련 있어요."},
+{t:"생명",d:"어려움",q:"자연 선택이 일어나기 위한 조건으로 가장 알맞은 것은?",a:["개체 간 유전 가능한 변이가 있고 번식 성공 차이가 있음","모든 개체가 완전히 같음","형질이 유전되지 않음","환경이 절대 변하지 않아야 함"],c:0,e:"유전 가능한 변이와 번식 성공의 차이가 있으면 세대가 지나며 특정 형질의 빈도가 변할 수 있습니다.",h:"어떤 개체가 더 많은 자손을 남기는지와 관련 있어요."},
+{t:"지구",d:"어려움",q:"기압이 낮아질 때 물의 끓는점은 일반적으로 어떻게 될까요?",a:["낮아진다","높아진다","변하지 않는다","항상 1000℃가 된다"],c:0,e:"외부 압력이 낮아지면 액체의 증기압이 외부 압력에 도달하기 쉬워져 끓는점이 낮아집니다.",h:"높은 산에서는 물이 더 낮은 온도에서 끓어요."},
+{t:"우주",d:"어려움",q:"별의 진화에서 태양과 비슷한 질량의 별이 중심 연료를 소진한 뒤 거치는 대표적 단계는?",a:["적색거성","중성자별이 항상 됨","즉시 블랙홀이 됨","행성으로 변함"],c:0,e:"태양과 비슷한 질량의 별은 주계열 단계를 지난 뒤 팽창해 적색거성이 되고, 이후 외층을 방출하고 백색왜성으로 남을 수 있습니다.",h:"별이 부풀어 붉고 크게 보이는 단계예요."},
+{t:"환경",d:"어려움",q:"탄소 순환에서 숲의 중요한 역할은?",a:["광합성으로 대기 CO₂를 흡수해 탄소를 저장할 수 있다","탄소를 우주 밖으로 모두 없앤다","탄소 순환과 무관하다","산소를 모두 소비한다"],c:0,e:"숲은 광합성으로 이산화 탄소를 흡수해 생물량과 토양에 탄소를 저장할 수 있지만, 산불·벌채·분해는 탄소를 다시 방출할 수 있습니다.",h:"나무와 토양은 탄소 저장고가 될 수 있어요."},
+{t:"기술",d:"어려움",q:"반복 측정과 평균값을 사용하는 주된 이유는?",a:["우연 오차의 영향을 줄이고 측정의 신뢰도를 높이기","결과를 원하는 대로 만들기","단위를 없애기","측정값을 무조건 크게 만들기"],c:0,e:"반복 측정은 우연한 변동을 파악하는 데 도움을 주며, 평균은 무작위 오차의 영향을 줄일 수 있습니다. 체계적 오차까지 자동으로 해결하는 것은 아닙니다.",h:"한 번만 측정하는 것보다 여러 번 측정하면 변동을 알 수 있어요."}
+];
+const topics=[["물리","⚙️","힘·운동·빛·소리·전기"],["화학","⚗️","원자·분자·반응·물질"],["생명","🧬","세포·유전·생태·인체"],["지구","🌋","대기·지질·날씨·바다"],["우주","🚀","태양계·별·은하·우주"],["환경","🌱","생태계·기후·자원"],["기술","🤖","AI·실험·도구·에너지"]];
+const glossary=[
+["관성","물체가 현재의 운동 상태를 유지하려는 성질."],["가속도","시간에 따른 속도의 변화율."],["에너지 보존","에너지는 형태가 바뀔 수 있지만 고립계의 총량은 보존된다는 원리."],["굴절","파동이 매질을 바꾸며 속도가 변해 진행 방향이 바뀌는 현상."],["전류","전하가 이동하는 흐름. 단위는 암페어(A)."],["원자","원소의 화학적 성질을 나타내는 기본 입자."],["분자","원자들이 화학 결합으로 연결된 입자."],["이온","전자를 잃거나 얻어 전하를 띠게 된 원자 또는 원자단."],["pH","수용액의 산성·염기성을 나타내는 척도."],["촉매","반응 경로를 바꿔 반응 속도를 변화시키고 전체적으로 소모되지 않는 물질."],["광합성","빛 에너지를 화학 에너지로 전환해 유기물을 만드는 과정."],["세포","생명체의 구조적·기능적 기본 단위."],["DNA","유전 정보를 저장하는 핵산."],["효소","생체 내 화학 반응을 촉진하는 촉매."],["생태계","생물과 그 주변 환경이 상호작용하는 체계."],["자연 선택","유전 가능한 형질에 따라 번식 성공이 달라져 형질 빈도가 변하는 과정."],["판 구조론","지구의 암석권이 여러 판으로 나뉘어 움직인다는 이론."],["풍화","암석이 물리적·화학적 작용으로 제자리에서 부서지거나 변하는 과정."],["조석","달과 태양의 중력 등으로 바닷물 높이가 주기적으로 변하는 현상."],["온실 효과","대기 중 특정 기체가 적외선을 흡수·재방출해 지표와 대기를 따뜻하게 하는 효과."],["광년","빛이 진공에서 1년 동안 이동하는 거리."],["핵융합","가벼운 원자핵들이 결합해 더 무거운 핵을 만들며 에너지를 방출하는 반응."],["사건의 지평선","블랙홀에서 바깥으로 탈출할 수 없는 경계."],["센서","물리량이나 환경 변화를 감지해 신호로 바꾸는 장치."],["독립 변인","실험에서 연구자가 의도적으로 바꾸는 요인."],["대조군","실험 처치의 효과를 비교하기 위한 기준 집단."],["탄소 발자국","활동이나 제품과 관련된 온실가스 배출량을 CO₂ 환산량으로 나타낸 값."],["부영양화","수계에 영양염이 과도하게 유입되어 조류 증가 등 생태 변화가 일어나는 현상."]];
+const achievements=[
+["첫 탐험","🚀","퀴즈를 1회 완료하세요.",s=>s.runs>=1],
+["연속 정답 5","🔥","한 번의 퀴즈에서 5문제 연속 정답.",s=>s.streak>=5],
+["완벽주의자","💎","퀴즈 한 판에서 모든 문제 정답.",s=>s.perfect>=1],
+["지식 수집가","📚","누적 50문제를 풀어 보세요.",s=>s.answered>=50],
+["백문백답","🧠","누적 100문제를 풀어 보세요.",s=>s.answered>=100],
+["속도의 신","⚡","스피드 모드로 완료하세요.",s=>s.sprint>=1],
+["생존 전문가","❤️","생존 모드로 완료하세요.",s=>s.survival>=1],
+["만점 도전","🏆","최고 점수 200점 이상 달성.",s=>s.best>=200],
+["분야 탐험가","🧭","서로 다른 5개 분야의 문제를 맞히세요.",s=>Object.keys(s.topics||{}).filter(k=>s.topics[k]>0).length>=5],
+["다시 도전","🔁","퀴즈를 3회 완료하세요.",s=>s.runs>=3],
+["오답 극복","🌱","오답 노트에 있는 문제를 다시 맞혀 보세요.",s=>s.recovered>=1],
+["연구소 마스터","👑","퀴즈 10회 완료.",s=>s.runs>=10]
+];
+const STORE="scienceQuestMegaV1";
+let data=loadData(),mode="classic",session=null,chosen=null,clock=null,seconds=0,questionStart=0,soundOn=true,theme="dark",dailyMode=false;
+function loadData(){try{return Object.assign({runs:0,best:0,totalScore:0,answered:0,correct:0,history:[],wrong:[],achievements:[],topics:{},perfect:0,streak:0,sprint:0,survival:0,recovered:0,xp:0},JSON.parse(localStorage.getItem(STORE)||"{}"))}catch(e){return {runs:0,best:0,totalScore:0,answered:0,correct:0,history:[],wrong:[],achievements:[],topics:{},perfect:0,streak:0,sprint:0,survival:0,recovered:0,xp:0}}}
+function saveData(){localStorage.setItem(STORE,JSON.stringify(data));renderStats()}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function toast(msg){let el=document.getElementById("toast");el.textContent=msg;el.classList.add("show");setTimeout(()=>el.classList.remove("show"),2300)}
+function beep(freq=650,dur=.09){if(!soundOn)return;try{let c=new (window.AudioContext||window.webkitAudioContext)(),o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=freq;g.gain.value=.045;o.start();g.gain.exponentialRampToValueAtTime(.001,c.currentTime+dur);o.stop(c.currentTime+dur)}catch(e){}}
+function showTab(name){document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("active",x.id==="tab-"+name));document.querySelectorAll(".side-btn").forEach(x=>x.classList.toggle("active",x.dataset.tab===name));if(name==="records")renderRecords();if(name==="topics")renderTopics();if(name==="achievements")renderAchievements();if(name==="review")renderWrong();if(name==="glossary")renderGlossary();window.scrollTo({top:document.querySelector(".layout").offsetTop-70,behavior:"smooth"})}
+document.querySelectorAll(".side-btn").forEach(b=>b.onclick=()=>showTab(b.dataset.tab));
+document.querySelectorAll(".mode-card").forEach(b=>b.onclick=()=>{mode=b.dataset.mode;document.querySelectorAll(".mode-card").forEach(x=>x.classList.toggle("selected",x===b))});
+document.getElementById("themeBtn").onclick=()=>{document.body.classList.toggle("light");theme=document.body.classList.contains("light")?"light":"dark";document.getElementById("themeBtn").textContent=theme==="light"?"🌙 다크":"☀️ 라이트"};
+document.getElementById("soundBtn").onclick=()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊 효과음 ON":"🔇 효과음 OFF";if(soundOn)beep()};
+document.getElementById("helpBtn").onclick=()=>alert("플레이 방법\\n1. 이름·분야·난이도·문제 수를 선택하세요.\\n2. 답을 고르면 즉시 채점과 해설이 나옵니다.\\n3. 힌트는 점수를 줄이지 않지만 정답을 알려주지는 않아요.\\n4. 오답과 최고 기록은 이 브라우저에 저장됩니다.\\n5. 스피드 모드는 문제마다 15초, 생존 모드는 기회 3번입니다.");
+document.getElementById("startBtn").onclick=()=>startGame(false);
+document.getElementById("serverQuizBtn").onclick=()=>startGame(false,true);
+document.getElementById("dailyBtn").onclick=()=>startGame(true);
+async function startGame(daily,serverOnly=false){dailyMode=daily;let topic=document.getElementById("topicSelect").value,diff=document.getElementById("difficulty").value,count=document.getElementById("questionCount").value;let pool=Q.filter(q=>(topic==="all"||q.t===topic)&&(diff==="all"||diff==="adaptive"||q.d===diff)&&(!serverOnly||q.serverManaged));if(daily){let day=new Date().toISOString().slice(0,10),seed=[...day].reduce((a,c)=>a+c.charCodeAt(0),0);pool=Q.filter(q=>q.t===topics[seed%topics.length][0]||q.d==="어려움");count="10";mode="classic";document.querySelectorAll(".mode-card").forEach(x=>x.classList.toggle("selected",x.dataset.mode==="classic"))}if(!pool.length){toast("조건에 맞는 문제가 없어요. 설정을 바꿔 보세요.");return}if(diff==="adaptive")pool=pool.slice().sort((a,b)=>({ "쉬움":0,"보통":1,"어려움":2 }[a.d]??1)-({"쉬움":0,"보통":1,"어려움":2}[b.d]??1));if(document.getElementById("shuffleToggle").value==="yes"||daily)pool=pool.slice().sort(()=>Math.random()-.5);let n=count==="all"?pool.length:Math.min(+count,pool.length);pool=pool.slice(0,n);let quizId=null;if(serverOnly){const token=localStorage.getItem('sq_server_token')||'';if(!token){toast('서버 문제 퀴즈를 시작하려면 서버 계정에 로그인하세요.');return}try{const r=await fetch('/api/quiz/start',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+token},body:JSON.stringify({questionIds:pool.map(q=>q.id)})});const d=await r.json();if(!r.ok)throw new Error(d.error||'시작 실패');quizId=d.quizId}catch(e){toast('서버 퀴즈 시작 실패: '+e.message);return}}session={quizId,serverOnly, name:document.getElementById("playerName").value.trim()||"익명의 탐험가",questions:pool,i:0,score:0,correct:0,answers:[],lives:3,streak:0,bestStreak:0,usedHints:0,mode,topic,started:Date.now(),finished:false};seconds=0;clearInterval(clock);clock=setInterval(()=>{seconds=Math.floor((Date.now()-session.started)/1000);document.getElementById("timerLabel").textContent="⏱️ "+fmtTime(seconds);if(session&&session.mode==="sprint"&&Date.now()-questionStart>=15000&&chosen===null)timeOut()},250);document.getElementById("setupPanel").classList.add("hidden");document.getElementById("resultPanel").classList.add("hidden");document.getElementById("quizPanel").classList.remove("hidden");document.getElementById("quizModeLabel").textContent=mode==="classic"?"🧠 클래식":mode==="sprint"?"⚡ 스피드":"❤️ 생존";document.getElementById("quizTopicLabel").textContent=topic==="all"?"🌌 전체 분야":"🧪 "+topic;renderQuestion();showTab("play")}
+function fmtTime(s){return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0")}
+function renderQuestion(){if(!session)return;let q=session.questions[session.i];chosen=null;questionStart=Date.now();document.getElementById("questionCounter").textContent=`문제 ${session.i+1} / ${session.questions.length}`;document.getElementById("quizProgress").style.width=(session.i/session.questions.length*100)+"%";document.getElementById("scoreLabel").textContent="점수 "+session.score;document.getElementById("livesLabel").textContent=session.mode==="survival"?"❤️".repeat(session.lives)+"🖤".repeat(3-session.lives):"🎯 "+session.correct+" 정답";document.getElementById("questionMeta").innerHTML=`<span class="pill">${q.t}</span><span class="pill">${q.d}</span><span class="pill">문제 코드 SQ-${Q.indexOf(q)+1}</span>`;document.getElementById("questionText").textContent=q.q;document.getElementById("feedback").className="feedback";document.getElementById("feedback").innerHTML="";document.getElementById("hintBtn").classList.remove("hidden");document.getElementById("nextBtn").classList.add("hidden");document.getElementById("finishBtn").classList.add("hidden");let answers=document.getElementById("answers");answers.innerHTML="";q.a.forEach((a,i)=>{let b=document.createElement("button");b.className="answer";b.innerHTML=`<span class="letter">${"ABCD"[i]}</span><span>${esc(a)}</span>`;b.onclick=()=>answer(i);answers.appendChild(b)});if(session.mode==="sprint")document.getElementById("timerLabel").textContent="⚡ 15초";else document.getElementById("timerLabel").textContent="⏱️ "+fmtTime(seconds)}
+async function answer(i){if(chosen!==null||!session)return;let q=session.questions[session.i];if(q.serverManaged){try{const token=localStorage.getItem('sq_server_token')||'';if(!token){toast('서버 문제를 풀려면 서버 계정으로 로그인하세요.');return}const r=await fetch('/api/quiz/answer',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+token},body:JSON.stringify({quizId:session.quizId,questionId:q.id,chosen:i})});const d=await r.json();if(!r.ok)throw new Error(d.error||'채점 실패');q.e=d.explanation;q._serverCorrect=d.correct}catch(e){toast('서버 채점 실패: '+e.message);return}}chosen=i;let correct=q.serverManaged?!!q._serverCorrect:i===q.c,buttons=[...document.querySelectorAll(".answer")];buttons.forEach((b,j)=>{b.disabled=true;if(q.serverManaged){if(j===i)b.classList.add(correct?"correct":"wrong")}else{if(j===q.c)b.classList.add("correct");if(j===i&&!correct)b.classList.add("wrong")}});if(correct){session.correct++;session.streak++;session.bestStreak=Math.max(session.bestStreak,session.streak);let speedBonus=session.mode==="sprint"?Math.max(0,Math.ceil((15000-(Date.now()-questionStart))/1000)):0;let pts=+document.getElementById("pointValue").value+speedBonus;session.score+=pts;beep(850,.12);if(data.wrong.some(w=>w.q===q.q)){data.recovered++;data.wrong=data.wrong.filter(w=>w.q!==q.q)} }else{session.streak=0;if(session.mode==="survival")session.lives--;beep(230,.18);if(!data.wrong.some(w=>w.q===q.q))data.wrong.unshift({q:q.q,a:q.a,c:q.c,e:q.e,t:q.t,d:q.d});data.wrong=data.wrong.slice(0,100)}session.answers.push({q:q.q,a:q.a,chosen:i,c:q.serverManaged?null:q.c,e:q.e,t:q.t,correct,questionId:q.id||null,serverManaged:!!q.serverManaged});let fb=document.getElementById("feedback");fb.className="feedback show "+(correct?"good":"bad");fb.innerHTML=`<strong>${correct?"✅ 정답입니다!":"❌ 아쉬워요!"}</strong> ${correct?`<span class="badge">+${+document.getElementById("pointValue").value+(session.mode==="sprint"?Math.max(0,Math.ceil((15000-(Date.now()-questionStart))/1000)):0)}점</span>`:""}<div style="margin-top:8px">${esc(q.e)}</div>`;document.getElementById("hintBtn").classList.add("hidden");document.getElementById("scoreLabel").textContent="점수 "+session.score;document.getElementById("livesLabel").textContent=session.mode==="survival"?"❤️".repeat(session.lives)+"🖤".repeat(3-session.lives):"🎯 "+session.correct+" 정답";if(session.mode==="survival"&&session.lives<=0){document.getElementById("finishBtn").classList.remove("hidden");document.getElementById("finishBtn").textContent="기회 소진 · 결과 보기 🏁"}else if(session.i===session.questions.length-1){document.getElementById("finishBtn").classList.remove("hidden")}else document.getElementById("nextBtn").classList.remove("hidden");saveData()}
+function timeOut(){if(chosen!==null||!session)return;answer(-1);let fb=document.getElementById("feedback");fb.innerHTML=fb.innerHTML.replace("❌ 아쉬워요!","⏰ 시간 초과!")}
+document.getElementById("hintBtn").onclick=()=>{if(!session||chosen!==null)return;let q=session.questions[session.i];session.usedHints++;toast("💡 힌트: "+q.h);document.getElementById("hintBtn").textContent="💡 힌트 확인 완료";document.getElementById("hintBtn").disabled=true};
+document.getElementById("nextBtn").onclick=()=>{session.i++;document.getElementById("hintBtn").disabled=false;document.getElementById("hintBtn").textContent="💡 힌트 사용";renderQuestion()};
+document.getElementById("finishBtn").onclick=finishGame;
+function finishGame(){if(!session||session.finished)return;session.finished=true;clearInterval(clock);seconds=Math.floor((Date.now()-session.started)/1000);let total=session.questions.length,percent=Math.round(session.correct/total*100),xp=session.score+session.correct*5;data.runs++;data.answered+=session.answers.length;data.correct+=session.correct;data.totalScore+=session.score;data.best=Math.max(data.best,session.score);data.xp+=xp;if(session.correct===total)data.perfect++;if(session.mode==="sprint")data.sprint++;if(session.mode==="survival")data.survival++;session.answers.forEach(a=>{if(a.correct)data.topics[a.t]=(data.topics[a.t]||0)+1});data.history.unshift({name:session.name,score:session.score,correct:session.correct,total,percent,seconds,mode:session.mode,date:new Date().toLocaleString("ko-KR")});data.history=data.history.slice(0,50);checkAchievements();saveData();document.getElementById("quizPanel").classList.add("hidden");document.getElementById("resultPanel").classList.remove("hidden");document.getElementById("resultTitle").textContent=session.name+" 탐험 완료!";document.getElementById("resultPercent").textContent=percent+"%";document.getElementById("resultRing").style.setProperty("--deg",percent*3.6+"deg");document.getElementById("resultScore").textContent=session.score+"점";document.getElementById("resultCorrect").textContent=session.correct+"/"+total;document.getElementById("resultTime").textContent=fmtTime(seconds);document.getElementById("resultXP").textContent="+"+xp+" XP";document.getElementById("resultMessage").textContent=percent===100?"완벽해요! 과학 마스터의 자격이 충분해요.":percent>=80?"훌륭해요! 과학 지식이 탄탄하네요.":percent>=60?"좋아요! 해설을 읽고 한 번 더 도전해 보세요.":"좋은 출발이에요. 오답 노트가 다음 도전을 도와줄 거예요.";document.getElementById("resultEmoji").textContent=percent===100?"🏆 💎 👑":percent>=80?"🚀 🌟 🧪":"🔬 🌱 💫";document.getElementById("resultReview").innerHTML=session.answers.map((a,i)=>`<div class="review-item"><strong>${i+1}. ${esc(a.q)}</strong><div class="${a.correct?"correct-text":"wrong-text"}">${a.serverManaged?(a.correct?"✓ 서버 채점: 정답":"✗ 서버 채점: 오답"):(a.correct?"✓ 정답":"✗ 내 답: "+(a.a[a.chosen]||"시간 초과"))+(!a.serverManaged?" · 정답: "+esc(a.a[a.c]):"")}</div><div class="small-note">${esc(a.e)}</div></div>`).join("");document.getElementById("setupPanel").classList.remove("hidden");document.getElementById("againBtn").onclick=()=>startGame(dailyMode);document.getElementById("reviewWrongBtn").onclick=()=>showTab("review");document.getElementById("shareBtn").onclick=async()=>{let txt=`🔬 SCIENCE QUEST 결과\\n탐험가: ${session.name}\\n점수: ${session.score}점\\n정답률: ${percent}% (${session.correct}/${total})\\n시간: ${fmtTime(seconds)}\\n나도 과학 퀴즈에 도전해 봐!`;try{if(navigator.share)await navigator.share({title:"SCIENCE QUEST 결과",text:txt});else{await navigator.clipboard.writeText(txt);toast("결과를 클립보드에 복사했어요!")}}catch(e){toast("공유를 취소했어요.")}};document.getElementById("printBtn").onclick=()=>window.print();toast("🎉 탐험 기록을 저장했어요!");showTab("play")}
+function checkAchievements(){achievements.forEach(a=>{if(a[3](data)&&!data.achievements.includes(a[0])){data.achievements.push(a[0]);toast("🎖️ 새 업적 획득: "+a[0])}})}
+function renderStats(){document.getElementById("statPlayed").textContent=data.runs;document.getElementById("statBest").textContent=data.best;document.getElementById("statBadges").textContent=data.achievements.length+" / "+achievements.length;document.getElementById("missionCount").textContent=Math.min(data.runs,1)+" / 1 완료";document.getElementById("missionBar").style.width=(data.runs?100:0)+"%";document.getElementById("dailyMission").textContent=data.runs?"오늘도 도전 완료! 새로운 분야에 도전해 보세요.":"퀴즈 한 판을 완료하고 첫 탐험 배지를 획득하세요."}
+function renderTopics(){document.getElementById("topicCards").innerHTML=topics.map(([t,em,desc])=>{let total=Q.filter(q=>q.t===t).length,hit=data.topics[t]||0;return `<div class="topic-card"><div class="emoji">${em}</div><h3>${t}과학</h3><p>${desc}</p><div class="small-note">문제 ${total}개 · 누적 정답 ${hit}개</div><div class="topic-meter"><div style="width:${Math.min(100,hit/Math.max(1,total)*100)}%"></div></div><button class="btn small" style="margin-top:12px" onclick="document.getElementById('topicSelect').value='${t}';showTab('play');toast('${t} 분야를 선택했어요')">이 분야 도전 →</button></div>`}).join("")}
+function renderAchievements(){document.getElementById("achievementCards").innerHTML=achievements.map(a=>{let got=data.achievements.includes(a[0]);return `<div class="achievement ${got?"":"locked"}"><div class="emoji">${a[1]}</div><h3>${esc(a[0])} ${got?"✓":"🔒"}</h3><p>${esc(a[2])}</p><span class="badge">${got?"획득 완료":"미획득"}</span></div>`}).join("")}
+function renderRecords(){document.getElementById("recordRuns").textContent=data.runs;document.getElementById("recordBest").textContent=data.best;document.getElementById("recordAccuracy").textContent=(data.answered?Math.round(data.correct/data.answered*100):0)+"%";let sorted=data.history.slice().sort((a,b)=>b.score-a.score).slice(0,10);document.getElementById("leaderboard").innerHTML=sorted.length?`<table><thead><tr><th>순위</th><th>탐험가</th><th>점수</th><th>정답률</th><th>모드</th></tr></thead><tbody>${sorted.map((x,i)=>`<tr><td class="rank">${["🥇","🥈","🥉"][i]||i+1}</td><td>${esc(x.name)}</td><td><strong>${x.score}</strong></td><td>${x.percent}%</td><td>${x.mode==="classic"?"클래식":x.mode==="sprint"?"스피드":"생존"}</td></tr>`).join("")}</tbody></table>`:'<div class="empty">아직 기록이 없어요. 첫 퀴즈를 완료해 보세요!</div>';document.getElementById("historyTable").innerHTML=data.history.length?`<table><thead><tr><th>날짜</th><th>점수</th><th>정답</th><th>시간</th></tr></thead><tbody>${data.history.slice(0,12).map(x=>`<tr><td>${esc(x.date)}</td><td>${x.score}점</td><td>${x.correct}/${x.total}</td><td>${fmtTime(x.seconds)}</td></tr>`).join("")}</tbody></table>`:'<div class="empty">탐험을 마치면 기록이 여기에 쌓입니다.</div>'}
+function renderWrong(){document.getElementById("wrongList").innerHTML=data.wrong.length?data.wrong.map((w,i)=>`<div class="review-item"><strong>${i+1}. ${esc(w.q)}</strong><span class="pill">${w.t} · ${w.d}</span><p class="small-note">정답: <b class="correct-text">${esc(w.a[w.c])}</b></p><p class="small-note">${esc(w.e)}</p><button class="btn small" onclick="practiceWrong(${i})">이 문제 다시 풀기</button></div>`).join(""):'<div class="empty">🎉 오답이 없어요! 퀴즈에 도전하면 틀린 문제를 여기에 모아 드릴게요.</div>'}
+function practiceWrong(i){let w=data.wrong[i];session={name:document.getElementById("playerName").value.trim()||"탐험가",questions:[{...w}],i:0,score:0,correct:0,answers:[],lives:3,streak:0,bestStreak:0,usedHints:0,mode:"classic",topic:w.t,started:Date.now(),finished:false,practice:true};seconds=0;clearInterval(clock);clock=setInterval(()=>{seconds=Math.floor((Date.now()-session.started)/1000);document.getElementById("timerLabel").textContent="⏱️ "+fmtTime(seconds)},500);document.getElementById("setupPanel").classList.add("hidden");document.getElementById("resultPanel").classList.add("hidden");document.getElementById("quizPanel").classList.remove("hidden");document.getElementById("quizModeLabel").textContent="📒 오답 복습";document.getElementById("quizTopicLabel").textContent=w.t;renderQuestion();showTab("play")}
+function renderGlossary(){let term=document.getElementById("glossarySearch").value.toLowerCase();document.getElementById("glossaryList").innerHTML=glossary.filter(x=>(x[0]+x[1]).toLowerCase().includes(term)).map(x=>`<div class="term"><strong>${esc(x[0])}</strong><p>${esc(x[1])}</p></div>`).join("")||'<div class="empty">검색 결과가 없어요.</div>'}
+document.getElementById("glossarySearch").addEventListener("input",renderGlossary);
+document.getElementById("clearWrongBtn").onclick=()=>{if(confirm("오답 노트를 모두 지울까요?")){data.wrong=[];saveData();renderWrong();toast("오답 노트를 비웠어요.")}};
+document.getElementById("clearRecordsBtn").onclick=()=>{if(confirm("기록과 업적을 모두 초기화할까요? 이 작업은 되돌릴 수 없어요.")){let wrong=data.wrong;data={runs:0,best:0,totalScore:0,answered:0,correct:0,history:[],wrong,achievements:[],topics:{},perfect:0,streak:0,sprint:0,survival:0,recovered:0,xp:0};saveData();renderRecords();renderAchievements();toast("기록을 초기화했어요.")}};
+renderStats();renderTopics();renderAchievements();renderRecords();renderWrong();renderGlossary();document.getElementById("statQuestions").textContent=Q.length+"+";document.getElementById("questionCount").querySelector('option[value="all"]').textContent="가능한 모든 문제 ("+Q.length+"개)";
+</script>
+
+<script>
+/* Extra account and QR module for the standalone demo */
+const AUTH_KEY="scienceQuestLocalAccountsV1", CURRENT_KEY="scienceQuestCurrentUserV1";
+let authMode="register", currentUser=localStorage.getItem(CURRENT_KEY)||"";
+function getAccounts(){try{return JSON.parse(localStorage.getItem(AUTH_KEY)||"{}")}catch(e){return {}}}
+async function digestPassword(value){
+  try{if(window.crypto&&crypto.subtle){const buf=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(value));return [...new Uint8Array(buf)].map(x=>x.toString(16).padStart(2,"0")).join("")}}catch(e){}
+  // Fallback for local file contexts; this is only demo-level obfuscation, not secure password storage.
+  let h=2166136261;for(let i=0;i<value.length;i++){h^=value.charCodeAt(i);h=Math.imul(h,16777619)}return "demo-"+(h>>>0).toString(16);
+}
+function openAuth(m){authMode=m;document.getElementById("authModal").classList.remove("hidden");document.getElementById("authTitle").textContent=m==="register"?"✨ 계정 만들기":"👤 로그인";document.getElementById("authSubmitBtn").textContent=m==="register"?"계정 만들기":"로그인";document.getElementById("authConfirmWrap").classList.toggle("hidden",m!=="register");document.getElementById("authConfirm").required=m==="register";document.getElementById("authPassword").autocomplete=m==="register"?"new-password":"current-password";document.getElementById("authSwitchBtn").textContent=m==="register"?"이미 계정이 있어요 · 로그인":"계정이 없어요 · 새로 만들기";document.getElementById("authError").textContent="";document.getElementById("authForm").reset()}
+function closeAuth(){document.getElementById("authModal").classList.add("hidden")}
+document.getElementById("accountOpenBtn").onclick=()=>currentUser?showTab("account"):openAuth("login");
+document.getElementById("authCloseBtn").onclick=closeAuth;
+document.getElementById("authSwitchBtn").onclick=()=>openAuth(authMode==="register"?"login":"register");
+document.getElementById("authForm").addEventListener("submit",async ev=>{
+ ev.preventDefault();const username=document.getElementById("authUsername").value.trim(),password=document.getElementById("authPassword").value,confirmPass=document.getElementById("authConfirm").value;
+ if(!/^[A-Za-z0-9_가-힣]{3,18}$/.test(username)){document.getElementById("authError").textContent="아이디는 한글·영문·숫자·밑줄로 3~18자 입력해 주세요.";return}
+ if(password.length<8){document.getElementById("authError").textContent="비밀번호는 8자 이상이어야 해요.";return}
+ const accounts=getAccounts(),key=username.toLowerCase(),hash=await digestPassword(password);
+ if(authMode==="register"){
+  if(accounts[key]){document.getElementById("authError").textContent="이미 존재하는 아이디예요.";return}
+  if(password!==confirmPass){document.getElementById("authError").textContent="비밀번호 확인이 일치하지 않아요.";return}
+  accounts[key]={username,hash,created:new Date().toISOString(),best:0};localStorage.setItem(AUTH_KEY,JSON.stringify(accounts));toast("계정이 만들어졌어요!");
+ }else{
+  if(!accounts[key]||accounts[key].hash!==hash){document.getElementById("authError").textContent="아이디 또는 비밀번호를 확인해 주세요.";return}
+ }
+ currentUser=key;localStorage.setItem(CURRENT_KEY,key);closeAuth();renderAccount();document.getElementById("playerName").value=accounts[key].username;document.getElementById("accountOpenBtn").textContent="👤 "+accounts[key].username;showTab("account");
+});
+function renderAccount(){
+ const el=document.getElementById("accountStatus");if(!el)return;
+ const accounts=getAccounts(),acc=accounts[currentUser];
+ if(currentUser&&acc){el.innerHTML=`<div class="user-card"><div class="avatar">🧑‍🚀</div><div><h3 style="margin:0">${esc(acc.username)} 탐험가</h3><p class="small-note">가입일: ${new Date(acc.created).toLocaleDateString("ko-KR")} · 이 기기의 로컬 계정</p><span class="badge">로그인됨</span></div></div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px"><button class="btn" onclick="document.getElementById('playerName').value='${esc(acc.username)}';toast('탐험가 이름을 적용했어요')">퀴즈 이름 적용</button><button class="btn" onclick="logoutLocal()">로그아웃</button><button class="btn" onclick="deleteLocalAccount()">계정 삭제</button></div><p class="small-note" style="margin-top:12px">퀴즈 기록은 브라우저 전체 기록에 저장되며, 계정별 온라인 동기화는 되지 않습니다.</p>`;document.getElementById("accountOpenBtn").textContent="👤 "+acc.username}
+ else{el.innerHTML='<h3>로그아웃 상태</h3><p class="small-note">계정을 만들거나 로그인하면 이 기기에서 탐험가 이름과 개인 기록을 관리할 수 있어요.</p><button class="btn primary" onclick="openAuth(\'register\')">✨ 계정 만들기</button> <button class="btn" onclick="openAuth(\'login\')">로그인</button>';document.getElementById("accountOpenBtn").textContent="👤 로그인"}
+}
+function logoutLocal(){currentUser="";localStorage.removeItem(CURRENT_KEY);renderAccount();toast("로그아웃했어요.")}
+function deleteLocalAccount(){if(!confirm("이 브라우저의 데모 계정을 삭제할까요? 퀴즈 기록은 별도로 남습니다."))return;let a=getAccounts();delete a[currentUser];localStorage.setItem(AUTH_KEY,JSON.stringify(a));logoutLocal();toast("계정을 삭제했어요.")}
+document.getElementById("makeQrBtn").onclick=()=>{
+ const value=document.getElementById("qrUrl").value.trim();if(!/^https?:\/\/[^\s]+$/i.test(value)){toast("먼저 공개 웹사이트 주소(https://...)를 입력해 주세요.");return}
+ const wrap=document.getElementById("qrImageWrap");wrap.innerHTML="";const img=document.createElement("img");img.alt="웹사이트 접속 QR 코드";img.className="qr-code";img.referrerPolicy="no-referrer";
+ // QR image is generated by a public QR rendering endpoint; an internet connection is required.
+ img.src="https://api.qrserver.com/v1/create-qr-code/?size=600x600&margin=16&data="+encodeURIComponent(value);
+ img.onerror=()=>{wrap.innerHTML='<p style="color:#a22">QR 생성에 실패했어요. 인터넷 연결을 확인하고 다시 시도해 주세요.</p>'};
+ wrap.appendChild(img);document.getElementById("qrCaption").textContent=value;document.getElementById("qrArea").classList.remove("hidden");document.getElementById("downloadQrBtn").disabled=false;toast("QR 코드를 만들었어요!");
+};
+document.getElementById("downloadQrBtn").onclick=async()=>{
+ const img=document.querySelector("#qrImageWrap img");if(!img){toast("먼저 QR 코드를 생성해 주세요.");return}
+ try{const r=await fetch(img.src);const blob=await r.blob();const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="science-quest-qr.png";a.click();URL.revokeObjectURL(a.href)}catch(e){window.open(img.src,"_blank");toast("QR 이미지를 새 탭에서 열었어요. 이미지 저장을 선택하세요.")}
+};
+document.getElementById("copyQrUrlBtn").onclick=async()=>{const value=document.getElementById("qrUrl").value.trim();if(!value){toast("복사할 주소를 먼저 입력해 주세요.");return}try{await navigator.clipboard.writeText(value);toast("주소를 복사했어요!")}catch(e){document.getElementById("qrUrl").select();toast("주소를 선택했어요. 복사해 주세요.")}};
+renderAccount();
+</script>
+
+
+<div id="serverModal" class="modal hidden" style="position:fixed;inset:0;z-index:100;background:#020817dd;display:none;align-items:center;justify-content:center;padding:18px">
+ <div class="panel" style="width:min(760px,100%);max-height:90vh;overflow:auto">
+  <div class="panel-head"><div><div class="eyebrow">ONLINE SERVICES</div><h2>🌐 서버 계정 & 글로벌 랭킹</h2></div><button class="btn small" id="serverCloseBtn">닫기 ✕</button></div>
+  <p class="small-note">서버를 실행한 뒤 여러 기기의 기록이 한곳에 모입니다. 계정은 이 서버의 저장소에 보관됩니다.</p>
+  <div class="grid-2" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+   <div class="field"><label for="serverUser">사용자 이름</label><input id="serverUser" maxlength="20" placeholder="영문/숫자/한글 2~20자"></div>
+   <div class="field"><label for="serverPass">비밀번호</label><input id="serverPass" type="password" minlength="8" placeholder="8자 이상"></div>
+  </div>
+  <div class="nav-actions" style="margin:12px 0"><button class="btn primary" id="serverRegisterBtn">서버 회원가입</button><button class="btn" id="serverLoginBtn">서버 로그인</button><button class="btn" id="serverLogoutBtn">로그아웃</button><button class="btn" id="serverRefreshBtn">랭킹 새로고침</button></div>
+  <div id="serverStatus" class="small-note">서버 연결 상태를 확인해 주세요.</div>
+  <h3>🏆 전체 랭킹 TOP 20</h3><div id="serverRanks" class="table-wrap"><div class="empty">랭킹을 불러오려면 서버를 실행하고 새로고침을 누르세요.</div></div>
+ </div>
+</div>
+<div id="devModal" class="modal hidden" style="position:fixed;inset:0;z-index:101;background:#020817dd;display:none;align-items:center;justify-content:center;padding:18px">
+ <div class="panel" style="width:min(850px,100%);max-height:92vh;overflow:auto">
+  <div class="panel-head"><div><div class="eyebrow">DEVELOPER CONSOLE</div><h2>🛠 개발자 모드</h2></div><button class="btn small" id="devCloseBtn">닫기 ✕</button></div>
+  <p class="small-note">관리자 키가 필요합니다. 서버에서 <code>ADMIN_KEY</code> 환경변수를 설정하세요. 문제 추가·수정·삭제와 JSON 가져오기/내보내기를 지원합니다. 관리자 키는 공유하지 마세요.</p>
+  <div class="field"><label for="adminKey">관리자 키</label><input id="adminKey" type="password" placeholder="서버의 ADMIN_KEY"></div>
+  <div class="nav-actions" style="margin:12px 0;flex-wrap:wrap"><button class="btn primary" id="devUnlockBtn">관리자 인증</button><button class="btn" id="devListBtn">문제 새로고침</button><button class="btn" id="devExportBtn">JSON 내보내기</button><label class="btn" for="devImportFile">JSON 가져오기</label><input id="devImportFile" type="file" accept=".json,application/json" style="display:none"></div>
+  <div id="devStatus" class="small-note">인증 전입니다.</div>
+  <hr style="border-color:var(--line);margin:18px 0">
+  <h3>➕ 새 문제 추가</h3>
+  <div class="grid-2" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+   <div class="field"><label for="devQuestion">문제</label><textarea id="devQuestion" rows="3" placeholder="문제 내용을 입력하세요"></textarea></div>
+   <div class="field"><label for="devExplanation">해설</label><textarea id="devExplanation" rows="3" placeholder="정답 해설"></textarea></div>
+   <div class="field"><label for="devTopic">분야</label><select id="devTopic"><option>물리</option><option>화학</option><option value="생명">생명과학</option><option value="지구">지구과학</option><option value="우주">우주</option><option value="환경">환경</option><option value="기술">과학기술</option></select></div>
+   <div class="field"><label for="devDifficulty">난이도</label><select id="devDifficulty"><option>쉬움</option><option>보통</option><option>어려움</option></select></div>
+   <div class="field"><label for="devA">선택지 A</label><input id="devA" placeholder="선택지 A"></div>
+   <div class="field"><label for="devB">선택지 B</label><input id="devB" placeholder="선택지 B"></div>
+   <div class="field"><label for="devC">선택지 C</label><input id="devC" placeholder="선택지 C"></div>
+   <div class="field"><label for="devD">선택지 D</label><input id="devD" placeholder="선택지 D"></div>
+   <div class="field"><label for="devCorrect">정답 선택지</label><select id="devCorrect"><option value="0">A</option><option value="1">B</option><option value="2">C</option><option value="3">D</option></select></div>
+  </div>
+  <div class="nav-actions" style="margin-top:12px;flex-wrap:wrap"><button class="btn primary" id="devAddBtn">서버에 문제 저장</button><button class="btn" id="devCancelEditBtn" style="display:none">수정 취소</button></div>
+  <h3 style="margin-top:20px">📚 등록된 문제 관리</h3><div id="devQuestionList" class="table-wrap"><div class="empty">관리자 인증 후 문제 목록을 불러오세요.</div></div>
+  <pre id="devOutput" style="white-space:pre-wrap;overflow-wrap:anywhere;background:var(--panel2);padding:12px;border-radius:12px;max-height:240px;overflow:auto"></pre>
+ </div>
+</div>
+<script>
+(function(){
+ const $=id=>document.getElementById(id);
+ let serverToken=localStorage.getItem('sq_server_token')||'', adminKey='';
+ const show=(id)=>{const e=$(id);e.classList.remove('hidden');e.style.display='flex'};
+ const hide=(id)=>{const e=$(id);e.classList.add('hidden');e.style.display='none'};
+ async function api(path,opts={}){
+  const headers={'Content-Type':'application/json',...(opts.headers||{})};
+  if(serverToken) headers.Authorization='Bearer '+serverToken;
+  if(adminKey && path.startsWith('/api/admin/')) headers['X-Admin-Key']=adminKey;
+  let r=await fetch(path,{...opts,headers});
+  let data={};try{data=await r.json()}catch(e){}
+  if(!r.ok)throw new Error(data.error||('HTTP '+r.status));
+  return data;
+ }
+ function status(msg){$('serverStatus').textContent=msg}
+ async function ranks(){
+  try{let d=await api('/api/leaderboard');$('serverRanks').innerHTML=d.items.length?'<table><thead><tr><th>순위</th><th>탐험가</th><th>최고 점수</th><th>정답률</th><th>플레이</th></tr></thead><tbody>'+d.items.map((x,i)=>'<tr><td class="rank">'+(['🥇','🥈','🥉'][i]||i+1)+'</td><td>'+safe(x.username)+'</td><td><strong>'+x.bestScore+'</strong></td><td>'+x.bestPercent+'%</td><td>'+x.plays+'</td></tr>').join('')+'</tbody></table>':'<div class="empty">아직 기록이 없습니다.</div>'}
+  catch(e){$('serverRanks').innerHTML='<div class="empty">서버에 연결할 수 없습니다. README의 실행 방법을 확인하세요.</div>';status('연결 실패: '+e.message)}
+ }
+ function safe(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+ $('serverOpenBtn').onclick=()=>{show('serverModal');ranks()};
+ $('serverCloseBtn').onclick=()=>hide('serverModal');
+ $('devOpenBtn').onclick=()=>show('devModal');
+ $('devCloseBtn').onclick=()=>hide('devModal');
+ $('serverRegisterBtn').onclick=async()=>{try{let d=await api('/api/auth/register',{method:'POST',body:JSON.stringify({username:$('serverUser').value,password:$('serverPass').value})});serverToken=d.token;localStorage.setItem('sq_server_token',serverToken);status('회원가입 완료: '+d.user.username);await ranks()}catch(e){status('회원가입 실패: '+e.message)}};
+ $('serverLoginBtn').onclick=async()=>{try{let d=await api('/api/auth/login',{method:'POST',body:JSON.stringify({username:$('serverUser').value,password:$('serverPass').value})});serverToken=d.token;localStorage.setItem('sq_server_token',serverToken);status('로그인 완료: '+d.user.username);await ranks()}catch(e){status('로그인 실패: '+e.message)}};
+ $('serverLogoutBtn').onclick=()=>{serverToken='';localStorage.removeItem('sq_server_token');status('로그아웃했습니다.')};
+ $('serverRefreshBtn').onclick=ranks;
+ let adminQuestions=[], editingId=null;
+ function clearQuestionForm(){editingId=null;['devQuestion','devExplanation','devA','devB','devC','devD'].forEach(id=>$(id).value='');$('devCorrect').value='0';$('devTopic').selectedIndex=0;$('devDifficulty').value='쉬움';$('devAddBtn').textContent='서버에 문제 저장';$('devCancelEditBtn').style.display='none'}
+ function questionPayload(){return {q:$('devQuestion').value,a:[$('devA').value,$('devB').value,$('devC').value,$('devD').value],c:Number($('devCorrect').value),e:$('devExplanation').value,t:$('devTopic').value,d:$('devDifficulty').value,h:'선택지의 핵심 개념을 떠올려 보세요.'}}
+ function renderAdminQuestions(){
+  const box=$('devQuestionList');
+  if(!adminQuestions.length){box.innerHTML='<div class="empty">등록된 문제가 없습니다.</div>';return}
+  box.innerHTML='<table><thead><tr><th>문제</th><th>분야</th><th>난이도</th><th>작업</th></tr></thead><tbody>'+adminQuestions.map((q,i)=>'<tr><td>'+safe(q.q)+'</td><td>'+safe(q.t)+'</td><td>'+safe(q.d)+'</td><td><button class="btn small" data-edit="'+i+'">수정</button> <button class="btn small" data-delete="'+safe(q.id)+'">삭제</button></td></tr>').join('')+'</tbody></table>';
+ }
+ async function loadAdminQuestions(){
+  const d=await api('/api/admin/questions');adminQuestions=d.questions||[];renderAdminQuestions();
+  $('devOutput').textContent='문제 '+adminQuestions.length+'개를 불러왔습니다.';$('devStatus').textContent='관리자 인증 완료 · 문제 '+adminQuestions.length+'개';
+ }
+ $('devUnlockBtn').onclick=async()=>{adminKey=$('adminKey').value;try{let d=await api('/api/admin/status');$('devStatus').textContent='관리자 인증 성공 · '+d.questionCount+'개 문제';$('devOutput').textContent='개발자 권한이 확인되었습니다.';await loadAdminQuestions()}catch(e){$('devStatus').textContent='인증 실패: '+e.message;adminKey=''}};
+ $('devListBtn').onclick=async()=>{try{await loadAdminQuestions()}catch(e){$('devStatus').textContent='실패: '+e.message}};
+ $('devAddBtn').onclick=async()=>{
+  try{
+   const payload=questionPayload();
+   const d=editingId
+    ? await api('/api/admin/questions/'+encodeURIComponent(editingId),{method:'PUT',body:JSON.stringify(payload)})
+    : await api('/api/admin/questions',{method:'POST',body:JSON.stringify(payload)});
+   $('devStatus').textContent=editingId?'문제 수정 완료':'문제 추가 완료';
+   $('devOutput').textContent=JSON.stringify(d.question||d,null,2);clearQuestionForm();await loadAdminQuestions();
+  }catch(e){$('devStatus').textContent='저장 실패: '+e.message}
+ };
+ $('devCancelEditBtn').onclick=clearQuestionForm;
+ $('devQuestionList').addEventListener('click',async ev=>{
+  const edit=ev.target.closest('[data-edit]'), del=ev.target.closest('[data-delete]');
+  if(edit){
+   const q=adminQuestions[Number(edit.dataset.edit)];if(!q)return;editingId=q.id;
+   $('devQuestion').value=q.q;$('devExplanation').value=q.e;$('devA').value=q.a[0];$('devB').value=q.a[1];$('devC').value=q.a[2];$('devD').value=q.a[3];$('devCorrect').value=String(q.c);$('devTopic').value=q.t;$('devDifficulty').value=q.d;
+   $('devAddBtn').textContent='수정 저장';$('devCancelEditBtn').style.display='inline-flex';$('devQuestion').focus();
+  }
+  if(del){
+   const id=del.dataset.delete;if(!confirm('이 문제를 영구 삭제할까요?'))return;
+   try{await api('/api/admin/questions/'+encodeURIComponent(id),{method:'DELETE'});$('devStatus').textContent='문제를 삭제했습니다.';await loadAdminQuestions()}catch(e){$('devStatus').textContent='삭제 실패: '+e.message}
+  }
+ });
+ $('devExportBtn').onclick=async()=>{
+  try{const d=await api('/api/admin/export');const blob=new Blob([JSON.stringify(d,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='science-quest-questions-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(url);$('devStatus').textContent='문제 JSON 내보내기 완료'}catch(e){$('devStatus').textContent='내보내기 실패: '+e.message}
+ };
+ $('devImportFile').addEventListener('change',async ev=>{
+  const file=ev.target.files&&ev.target.files[0];if(!file)return;
+  try{const parsed=JSON.parse(await file.text());const questions=Array.isArray(parsed)?parsed:parsed.questions;if(!Array.isArray(questions))throw new Error('JSON에 questions 배열이 없습니다.');
+   if(!confirm(questions.length+'개 문제를 추가 가져올까요? 기존 문제는 유지됩니다.'))return;
+   const d=await api('/api/admin/questions/import',{method:'POST',body:JSON.stringify({questions,replace:false})});$('devStatus').textContent='가져오기 완료 · 총 '+d.questionCount+'개 문제';await loadAdminQuestions();
+  }catch(e){$('devStatus').textContent='가져오기 실패: '+e.message}finally{ev.target.value=''}
+ });
+ // Pull developer-created questions from the server into the live quiz pool.
+ fetch('/api/questions').then(r=>{if(!r.ok)throw new Error('API unavailable');return r.json()}).then(d=>{
+  if(Array.isArray(d.questions)) {
+   for(const q of d.questions){const idx=Q.findIndex(x=>x.id===q.id);const item={...q,serverManaged:true};if(idx>=0)Q[idx]=item;else Q.push(item)}
+   $('devStatus') && ($('devStatus').textContent='서버 문제 '+d.questions.length+'개를 퀴즈에 연결했습니다. 서버 계정 로그인 후 공식 채점됩니다.');
+  }
+}).catch(()=>{});
+ // submit the finished run to the server after the original finish handler has updated the session.
+ document.getElementById('finishBtn').addEventListener('click',()=>{
+  setTimeout(()=>{
+   const ss=(typeof session!=='undefined')?session:null;
+   if(!ss || !ss.finished || !serverToken || ss._serverSubmitted)return;
+   ss._serverSubmitted=true;
+   if(!ss.serverOnly || !ss.quizId){status('로컬 퀴즈 기록은 이 브라우저에만 저장됩니다. 공식 순위에는 서버 문제로 도전하세요.');return}
+   api('/api/quiz/submit',{method:'POST',body:JSON.stringify({quizId:ss.quizId,mode:ss.mode,topic:ss.topic,difficulty:document.getElementById('difficulty').value||'all'})})
+    .then(d=>{status('서버에서 공식 채점 완료 · '+d.correct+'/'+d.total+' 정답 · '+d.score+'점');ranks()})
+    .catch(e=>status('공식 점수 저장 실패: '+e.message));
+  },0);
+ });
+ // expose a small connection hint on startup
+ fetch('/api/health').then(r=>r.json()).then(d=>{if(d.ok)status('서버 연결됨 · '+d.service)}).catch(()=>{});
+})();
+</script>
+
+</body>
+</html>
